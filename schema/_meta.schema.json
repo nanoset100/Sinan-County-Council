@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/_meta.schema.json",
+  "title": "_meta",
+  "description": "모든 레코드 공통 필수 메타 (PRD v0.4 §8). source_url·source_system·collected_at 필수. reviewed_by/at 은 검수 완료 시 채워진다(원칙 6: 무검수 게시 금지).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_url", "source_system", "collected_at"],
+  "properties": {
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "원문 문서 URL (정본)"
+    },
+    "source_system": {
+      "type": "string",
+      "enum": ["CLIK", "SHINAN_COUNCIL", "ELIS", "SHINAN_GUN", "MANUAL"],
+      "description": "S1=CLIK, S2=SHINAN_COUNCIL, S3=ELIS, S4=SHINAN_GUN, 수기=MANUAL"
+    },
+    "snapshot_path": {
+      "type": ["string", "null"],
+      "description": "수집 시점 원문 사본 경로 (§4 스냅샷 정책). 라이선스(§15-2) 확인 전 내부 검수용."
+    },
+    "source_alive": {
+      "type": "boolean",
+      "description": "최근 링크 생존 검사 결과 (§4). false 이면 UI에 '원문 링크 변경됨' + 스냅샷 병기."
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date",
+      "description": "수집일 (YYYY-MM-DD)"
+    },
+    "reviewed_by": {
+      "type": ["string", "null"],
+      "description": "데이터 검수자 ID. null=미검수(게시 불가)."
+    },
+    "reviewed_at": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "데이터 검수일 (YYYY-MM-DD)"
+    }
+  }
+}

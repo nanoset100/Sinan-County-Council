@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/anchor.schema.json",
+  "title": "anchor",
+  "description": "원문 근거 앵커 공통 구조 (PRD v0.4 §8, 인용문 폴백). Verifier 앵커 무결성 기준: url 필수 AND (fragment 또는 quote 중 하나 이상 존재).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["url"],
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "원문 문서 URL"
+    },
+    "fragment": {
+      "type": "string",
+      "minLength": 1,
+      "description": "원문 페이지에 안정 fragment가 있을 때만 (#조항-앵커)"
+    },
+    "quote": {
+      "type": "string",
+      "minLength": 1,
+      "description": "fragment 불가 시 필수 폴백 — 원문에서 그대로 인용한 근거 문장"
+    }
+  },
+  "anyOf": [
+    { "required": ["fragment"] },
+    { "required": ["quote"] }
+  ],
+  "$comment": "anyOf 로 fragment/quote 중 최소 1개를 강제한다. 스키마 검증은 '존재'만 보장하고, quote 문자열이 실제 원문에 있는지는 Verifier grounding 이 검사한다."
+}

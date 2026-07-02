@@ -1,0 +1,22 @@
+---
+// 배치 1 자리표시 홈. 프론트엔드(F1 홈 대시보드)는 배치 2에서 구현한다.
+// 이 페이지는 Astro 빌드 파이프라인이 동작함을 확인하기 위한 최소 진입점이다.
+const buildDate = new Date().toISOString().slice(0, 10);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>신안군 의정활동 공개 포털 (준비 중)</title>
+  </head>
+  <body>
+    <main>
+      <h1>신안군 의정활동 공개 포털</h1>
+      <p>본 사이트는 공개된 공식 기록을 정리한 비영리 시민 정보 서비스이며 특정 정당·후보와 무관합니다.</p>
+      <p><strong>현재 상태:</strong> 기반 구축(배치 1) — 데이터 모델·파이프라인 골격. 화면(F1~F8)은 준비 중입니다.</p>
+      <p><small>빌드일: {buildDate}</small></p>
+    </main>
+  </body>
+</html>

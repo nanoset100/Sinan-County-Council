@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/executive.schema.json",
+  "title": "executive",
+  "description": "집행부 공보 (PRD v0.4 §8, F3) — §5 한정 범위. _meta.source_url = 군 공보 원문(필수).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "dept", "title", "date", "_meta"],
+  "properties": {
+    "id": { "type": "string", "description": "예: exec-2026-001" },
+    "dept": { "type": "string" },
+    "title": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "related_agendas": { "type": "array", "items": { "type": "string" } },
+    "region_tags": { "type": "array", "items": { "type": "string" } },
+    "ai_content": { "$ref": "ai_content.schema.json" },
+    "_meta": { "$ref": "_meta.schema.json" }
+  }
+}

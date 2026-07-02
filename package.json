@@ -1,0 +1,29 @@
+{
+  "name": "sinan-council-portal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "신안군 의정활동 공개 플랫폼 — PRD v0.4 기반. 배치 1: 데이터 모델·파이프라인 골격.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate": "tsx scripts/validate-data.ts",
+    "pipeline": "tsx pipeline/run.ts",
+    "g0": "tsx scripts/g0-smoke-test.ts"
+  },
+  "dependencies": {
+    "astro": "^5.2.0"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@types/node": "^22.10.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

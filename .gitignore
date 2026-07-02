@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# 파이프라인 스테이징 (검수·머지 전 자리표시, §6)
+.pipeline-out/
+
+# env & secrets (인증키 절대 커밋 금지 — PRD §9)
+.env
+.env.local
+.env.*.local
+
+# 원문 스냅샷 (§4 link rot 대책) — 공공저작물 라이선스(§15-2) 확인 전 내부 검수용.
+# 라이선스 확인 후 공개 게시 정책이 서면 .gitignore에서 해제한다.
+snapshots/
+
+# logs / temp
+*.log
+.DS_Store
+Thumbs.db

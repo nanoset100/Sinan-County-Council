@@ -1,0 +1,28 @@
+[
+  {
+    "kind": "agenda",
+    "sourceUrl": "https://council.shinan.go.kr/example/bill/2026-001",
+    "sourceText": "신안군 농어촌버스 요금 지원 조례안. 이 조례는 신안군에 주민등록을 둔 65세 이상 주민의 농어촌버스 요금을 지원하는 것을 목적으로 한다. 시행일은 2026년 9월 1일로 한다.",
+    "snapshotPath": null,
+    "data": {
+      "id": "2026-bill-001",
+      "clik_docid": null,
+      "title": "신안군 농어촌버스 요금 지원 조례안",
+      "bill_no": "제10-1호",
+      "type": "조례",
+      "proposer": { "type": "의원", "raw": "홍길동 의원 외 2인" },
+      "outline": "이 조례는 신안군에 주민등록을 둔 65세 이상 주민의 농어촌버스 요금을 지원하는 것을 목적으로 한다. 시행일은 2026년 9월 1일로 한다.",
+      "timeline": [
+        { "stage": "제안", "date": "2026-08-01" },
+        { "stage": "위원회 심사", "date": "2026-08-20", "result": "원안가결" },
+        { "stage": "본회의 의결", "date": "2026-08-28", "result": "원안가결" }
+      ],
+      "votes": { "recorded": false, "records": [] },
+      "related_members": [],
+      "related_dept": null,
+      "related_meetings": [],
+      "region_tags": [],
+      "files": []
+    }
+  }
+]

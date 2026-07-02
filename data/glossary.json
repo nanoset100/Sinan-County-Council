@@ -1,0 +1,62 @@
+[
+  {
+    "term": "원안가결",
+    "plain": "제출된 안건이 수정 없이 그대로 통과되었다는 뜻",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "수정가결",
+    "plain": "제출된 안건의 일부를 고쳐서 통과시켰다는 뜻",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "부결",
+    "plain": "안건이 표결에서 통과되지 못하고 폐기되었다는 뜻",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "계수조정",
+    "plain": "예산안을 심사하면서 사업별 금액을 늘리거나 줄여 최종 숫자를 맞추는 과정",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "회부",
+    "plain": "안건을 심사하도록 해당 위원회로 넘기는 것",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "상정",
+    "plain": "회의에서 안건을 정식으로 논의 대상에 올리는 것",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "이송",
+    "plain": "의회에서 의결된 안건을 집행부(군수)로 보내는 것",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "공포",
+    "plain": "확정된 조례·규칙을 군민이 알 수 있도록 공식적으로 알리는 것. 이때부터 효력이 생긴다",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "5분자유발언",
+    "plain": "의원이 안건과 별개로 5분 동안 자유롭게 의견을 말하는 발언 기회",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  {
+    "term": "행정사무감사",
+    "plain": "의회가 집행부(군청)의 사무 처리가 제대로 됐는지 점검하는 절차",
+    "reviewed_by": null,
+    "reviewed_at": null
+  }
+]

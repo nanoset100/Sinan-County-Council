@@ -1,0 +1,25 @@
+name: validate-data
+
+# 데이터 스키마 검증 (PRD v0.4 §F9, §11 DoD). 실패 시 빌드 중단.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: JSON Schema 검증 (§8)
+        run: npm run validate
+      - name: Verifier 테스트 (§11 DoD)
+        run: npm test
+      - name: Astro 빌드
+        run: npm run build

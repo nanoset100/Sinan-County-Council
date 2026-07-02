@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/meeting.schema.json",
+  "title": "meeting",
+  "description": "회의록 (PRD v0.4 §8, F6) ← S1 minutes.do.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "date", "type", "minutes_url", "_meta"],
+  "properties": {
+    "id": { "type": "string", "description": "예: 2026-plenary-001" },
+    "clik_docid": { "type": ["string", "null"] },
+    "date": { "type": "string", "format": "date" },
+    "type": { "type": "string", "description": "본회의·상임위·특별위·행정사무감사" },
+    "session": { "type": ["string", "null"], "description": "제…회" },
+    "agendas": { "type": "array", "items": { "type": "string" } },
+    "minutes_html": { "type": ["string", "null"], "description": "MINTS_HTML 정제본" },
+    "minutes_url": { "type": "string", "format": "uri", "description": "원본 링크" },
+    "_meta": { "$ref": "_meta.schema.json" }
+  }
+}

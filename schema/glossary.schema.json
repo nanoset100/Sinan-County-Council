@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/glossary.schema.json",
+  "title": "glossary",
+  "description": "행정용어 사전 (PRD v0.4 §8, A5) — 고정 데이터, 배열 구조(v0.4 수정). 런타임 생성 아님.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["term", "plain"],
+    "properties": {
+      "term": { "type": "string" },
+      "plain": { "type": "string", "description": "평이한 설명" },
+      "reviewed_by": { "type": ["string", "null"] },
+      "reviewed_at": { "type": ["string", "null"], "format": "date" }
+    }
+  }
+}

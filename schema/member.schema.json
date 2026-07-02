@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/member.schema.json",
+  "title": "member",
+  "description": "의원 (PRD v0.4 §8, F2) ← S1 assemblyinfo.do. 공개 직무 정보만(§9).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "term", "_meta"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^member-[0-9]{4}$" },
+    "clik_docid": { "type": ["string", "null"] },
+    "name": { "type": "string" },
+    "photo_url": { "type": ["string", "null"], "format": "uri" },
+    "district": { "type": ["string", "null"], "description": "선거구" },
+    "party": { "type": ["string", "null"], "description": "정당" },
+    "term": { "type": "string", "description": "예: 제10대" },
+    "committees": { "type": "array", "items": { "type": "string" } },
+    "links": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "description": "공개 연락처/링크"
+    },
+    "_meta": { "$ref": "_meta.schema.json" }
+  }
+}

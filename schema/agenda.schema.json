@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sinan-council.local/schema/agenda.schema.json",
+  "title": "agenda",
+  "description": "안건 (PRD v0.4 §8, F4 핵심) ← S1 bill.do. ai_content 는 검수 통과분만; 없으면 UI에 'AI 요약 미제공' 표시(§14-2 정합).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "type", "proposer", "outline", "timeline", "votes", "_meta"],
+  "properties": {
+    "id": { "type": "string", "description": "예: 2026-bill-001" },
+    "clik_docid": { "type": ["string", "null"] },
+    "title": { "type": "string", "description": "BI_SJ" },
+    "bill_no": { "type": ["string", "null"], "description": "BI_NO" },
+    "type": { "type": "string", "description": "BI_KND_NM (조례·예산·동의/승인·건의·결의·청원·기타)" },
+    "proposer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "raw"],
+      "properties": {
+        "type": { "type": "string", "enum": ["집행부", "의원", "위원장"] },
+        "raw": { "type": "string", "description": "PROPSR 원문" }
+      }
+    },
+    "outline": { "type": "string", "description": "BI_OUTLINE 의안요지 (원문 그대로)" },
+    "timeline": {
+      "type": "array",
+      "description": "제안→위원회 심사→본회의 의결→이송→공포. S1 필드로 자동 구성.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage"],
+        "properties": {
+          "stage": { "type": "string" },
+          "date": { "type": ["string", "null"], "format": "date" },
+          "result": { "type": ["string", "null"], "description": "중립 동사만(원안가결 등)" },
+          "no": { "type": ["string", "null"], "description": "공포 번호 등" }
+        }
+      }
+    },
+    "votes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recorded", "records"],
+      "properties": {
+        "recorded": {
+          "type": "boolean",
+          "description": "기본 false — API 기명표결 미제공. false 이면 UI '개별 표결 기록 없음(무기명 처리)'."
+        },
+        "records": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "related_members": { "type": "array", "items": { "type": "string" } },
+    "related_dept": { "type": ["string", "null"] },
+    "related_meetings": { "type": "array", "items": { "type": "string" } },
+    "region_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "A4b 읍면·섬 태그 — 운영자 승인(§6-1 T3) 후 기재"
+    },
+    "files": { "type": "array", "items": { "type": "string" } },
+    "ai_content": { "$ref": "ai_content.schema.json" },
+    "_meta": { "$ref": "_meta.schema.json" }
+  }
+}
