@@ -1,4 +1,4 @@
-import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { selectDrafter, ClaudeAiDrafter } from '../pipeline/ai-drafter.js';
 import { verify } from '../pipeline/verifier/index.js';
@@ -99,6 +99,7 @@ async function main(): Promise<void> {
     process.exit(2);
   }
 
+  await rm(OUT, { recursive: true, force: true }); // 이전 실행의 산출물 제거(결과 혼선 방지)
   await mkdir(OUT, { recursive: true });
   let passed = 0;
   let totalMs = 0;

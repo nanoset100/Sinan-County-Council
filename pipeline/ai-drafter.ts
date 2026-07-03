@@ -97,7 +97,8 @@ export class ClaudeAiDrafter implements AiDrafter {
     const msg = await client.messages.create({
       model: this.model,
       max_tokens: 1024,
-      temperature: 0, // A1 은 사실 재서술 — 창의성 아님. 재현성·파일럿 측정 일관성을 위해 0.
+      // ⚠️ temperature 등 샘플링 파라미터 금지: claude-sonnet-5/opus-4-8/4.7/fable-5 는
+      //    비기본 temperature 를 400 으로 거부한다. A1 재현성은 프롬프트로 확보한다.
       system: A1_SYSTEM_PROMPT,
       messages: [
         {
