@@ -97,6 +97,7 @@ export class ClaudeAiDrafter implements AiDrafter {
     const msg = await client.messages.create({
       model: this.model,
       max_tokens: 1024,
+      temperature: 0, // A1 은 사실 재서술 — 창의성 아님. 재현성·파일럿 측정 일관성을 위해 0.
       system: A1_SYSTEM_PROMPT,
       messages: [
         {

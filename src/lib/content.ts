@@ -6,7 +6,7 @@ import { join } from 'node:path';
  *
  * 실데이터가 아직 없어(신안군 제10대 개원 직후) 개발 미리보기용 fixtures/ 를 함께 로드하고,
  * fixtures 유래 레코드는 isSample=true 로 표시해 UI 가 "샘플" 배지를 달게 한다.
- * 배포 시에는 SITE_FIXTURES=0 으로 끈다(실데이터만 게시).
+ * 픽스처 로딩은 아래 USE_FIXTURES 에서 fail-closed 로 통제한다(기본 OFF, 프로덕션 빌드 자동 차단).
  */
 
 const ROOT = process.cwd();

@@ -4,7 +4,7 @@ import AiSummary from "../../components/AiSummary.astro";
 import Timeline from "../../components/Timeline.astro";
 import SourceMeta from "../../components/SourceMeta.astro";
 import { annotateGlossary } from "../../lib/glossary";
-import { getAgendas, getMember, getMeeting } from "../../lib/content";
+import { getAgendas, getMember, getMeeting, firstDate } from "../../lib/content";
 
 export function getStaticPaths() {
   return getAgendas().map((a) => ({ params: { id: a.id }, props: { agenda: a } }));
@@ -12,45 +12,62 @@ export function getStaticPaths() {
 const { agenda } = Astro.props;
 const members = (agenda.related_members ?? []).map((id) => getMember(id)).filter(Boolean);
 const meetings = (agenda.related_meetings ?? []).map((id) => getMeeting(id)).filter(Boolean);
+
+// F5 Pagefind 필터값(실데이터 스키마 기준: 유형·연도·읍면·의원)
+const year = (firstDate(agenda) || "").slice(0, 4);
+const memberNames = members.map((m) => m!.name);
 ---
 <Layout title={`${agenda.title} — 안건`}>
   <p class="muted"><a href="/agendas">← 안건 목록</a></p>
-  <div class="row" style="justify-content:space-between">
-    <h1 style="margin-bottom:0.25rem">{agenda.title}</h1>
-    {agenda.isSample && <span class="badge">샘플</span>}
-  </div>
-  <div class="row muted" style="gap:0.75rem">
-    <span class="badge">{agenda.type}</span>
-    {agenda.bill_no && <span>의안번호 {agenda.bill_no}</span>}
-    <span>제안 {agenda.proposer.raw} ({agenda.proposer.type})</span>
-  </div>
 
-  <!-- AI 요약 블록 상단 배치 (§7-A F4) -->
-  <AiSummary ai={agenda.ai_content} sourceText={agenda.outline} sourceUrl={agenda._meta.source_url} />
+  <article data-pagefind-body data-pagefind-meta={`date:${firstDate(agenda)}`}>
+    <!-- Pagefind 필터(F5). 화면에는 숨김. -->
+    <div class="visually-hidden">
+      <span data-pagefind-filter={`유형:${agenda.type}`}></span>
+      {year && <span data-pagefind-filter={`연도:${year}`}></span>}
+      {(agenda.region_tags ?? []).map((r) => <span data-pagefind-filter={`읍면:${r}`}></span>)}
+      {memberNames.map((n) => <span data-pagefind-filter={`의원:${n}`}></span>)}
+    </div>
 
-  <h2>의안요지 (원문)</h2>
-  <p class="card" set:html={annotateGlossary(agenda.outline)} />
+    <div class="row" style="justify-content:space-between">
+      <h1 style="margin-bottom:0.25rem">{agenda.title}</h1>
+      {agenda.isSample && <span class="badge" data-pagefind-ignore>샘플</span>}
+    </div>
+    <div class="row muted" style="gap:0.75rem">
+      <span class="badge">{agenda.type}</span>
+      {agenda.bill_no && <span>의안번호 {agenda.bill_no}</span>}
+      <span>제안 {agenda.proposer.raw} ({agenda.proposer.type})</span>
+    </div>
 
-  <h2>진행 타임라인</h2>
-  <Timeline timeline={agenda.timeline} />
+    <!-- AI 요약 블록 상단 배치 (§7-A F4) -->
+    <AiSummary ai={agenda.ai_content} sourceText={agenda.outline} sourceUrl={agenda._meta.source_url} />
 
-  <h2>표결</h2>
-  <p class="muted">{agenda.votes.recorded ? "표결 기록 있음" : "개별 표결 기록 없음(기록상 무기명 처리)"}</p>
+    <h2>의안요지 (원문)</h2>
+    {agenda.outline
+      ? <p class="card" set:html={annotateGlossary(agenda.outline)} />
+      : <p class="muted">의안요지 원문이 아직 없습니다(원문 링크를 참고하세요).</p>}
 
-  {(members.length > 0 || meetings.length > 0 || agenda.related_dept) && (
-    <>
-      <h2>관련</h2>
-      <ul class="stack" style="list-style:none;padding:0">
-        {members.map((m) => <li><a href={`/members/${m!.id}`}>👤 {m!.name}</a></li>)}
-        {meetings.map((m) => <li><a href="/meetings">📄 {m!.session ?? ""} {m!.type} ({m!.date})</a></li>)}
-        {agenda.related_dept && <li>🏛 소관 부서: {agenda.related_dept}</li>}
-      </ul>
-    </>
-  )}
+    <h2>진행 타임라인</h2>
+    <Timeline timeline={agenda.timeline} />
 
-  {agenda.region_tags && agenda.region_tags.length > 0 && (
-    <p class="row" style="margin-top:1rem">읍면·섬: {agenda.region_tags.map((r) => <span class="badge">{r}</span>)}</p>
-  )}
+    <h2>표결</h2>
+    <p class="muted">{agenda.votes.recorded ? "표결 기록 있음" : "개별 표결 기록 없음(기록상 무기명 처리)"}</p>
+
+    {(members.length > 0 || meetings.length > 0 || agenda.related_dept) && (
+      <>
+        <h2>관련</h2>
+        <ul class="stack" style="list-style:none;padding:0">
+          {members.map((m) => <li><a href={`/members/${m!.id}`}>👤 {m!.name}</a></li>)}
+          {meetings.map((m) => <li><a href="/meetings">📄 {m!.session ?? ""} {m!.type} ({m!.date})</a></li>)}
+          {agenda.related_dept && <li>🏛 소관 부서: {agenda.related_dept}</li>}
+        </ul>
+      </>
+    )}
+
+    {agenda.region_tags && agenda.region_tags.length > 0 && (
+      <p class="row" style="margin-top:1rem">읍면·섬: {agenda.region_tags.map((r) => <span class="badge">{r}</span>)}</p>
+    )}
+  </article>
 
   <hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--c-border)" />
   <SourceMeta meta={agenda._meta} label="안건 원문 보기" />

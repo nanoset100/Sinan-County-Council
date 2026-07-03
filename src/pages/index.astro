@@ -20,7 +20,7 @@ const lastUpdated = recent[0]?.date ?? "-";
   <h1>신안군 의정활동, 읽기 쉽게.</h1>
   <p class="muted">판단은 군민이, 번역은 AI가. 공개된 공식 기록을 한곳에 모아 출처와 함께 공개합니다.</p>
 
-  <form action="/agendas" method="get" class="row" style="margin:1rem 0" role="search">
+  <form action="/search" method="get" class="row" style="margin:1rem 0" role="search">
     <label for="q" class="visually-hidden">검색어</label>
     <input id="q" name="q" type="search" placeholder="안건·의원·키워드 검색"
       style="flex:1;min-width:12rem;padding:0.6rem;border:1px solid var(--c-border);border-radius:var(--radius)" />
