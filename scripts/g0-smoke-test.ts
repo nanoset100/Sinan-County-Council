@@ -14,6 +14,9 @@
  *   또는: npm run g0 -- --rasmbly=<후보값>
  */
 
+// .env 자동 로드(있으면). 키를 셸/전사에 노출하지 않도록 .env 저장만으로 실행되게 한다.
+try { process.loadEnvFile(); } catch { /* .env 없으면 무시 */ }
+
 const BASE_URL = process.env.S1_BASE_URL ?? 'https://clik.nanet.go.kr/openapi';
 
 function arg(name: string): string | undefined {

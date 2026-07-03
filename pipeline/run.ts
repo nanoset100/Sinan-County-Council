@@ -7,6 +7,9 @@ import { verify } from './verifier/index.js';
 import { diffRecord, type DiffEntry } from './differ.js';
 import type { RawRecord } from './types.js';
 
+// .env 자동 로드(있으면). COLLECTOR=s1 등에서 키를 .env 로만 공급할 수 있게 한다.
+try { process.loadEnvFile(); } catch { /* .env 없으면 무시 */ }
+
 /**
  * 파이프라인 오케스트레이션 (PRD v0.4 §6).
  *   수집 → 정규화 → AI 초안(A1) → Verifier(스크리닝) → 변경 감지.

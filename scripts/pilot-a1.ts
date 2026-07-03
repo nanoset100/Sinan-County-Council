@@ -4,6 +4,9 @@ import { selectDrafter, ClaudeAiDrafter } from '../pipeline/ai-drafter.js';
 import { verify } from '../pipeline/verifier/index.js';
 import type { AiContent } from '../pipeline/types.js';
 
+// .env 자동 로드(있으면). 키를 셸/전사에 노출하지 않도록 .env 저장만으로 실행되게 한다.
+try { process.loadEnvFile(); } catch { /* .env 없으면 무시 */ }
+
 /**
  * §12-3 A1 품질 파일럿 (PRD v0.5).
  *
