@@ -38,6 +38,10 @@ export class ManualCollector implements Collector {
     return this.collectKind('member');
   }
 
+  async collectExecutives(): Promise<RawRecord[]> {
+    return this.collectKind('executive');
+  }
+
   private async collectKind(kind: RecordKind): Promise<RawRecord[]> {
     const entries = await this.readAllEntries();
     return entries
@@ -55,7 +59,8 @@ export class ManualCollector implements Collector {
   private async readAllEntries(): Promise<ManualEntry[]> {
     let files: string[];
     try {
-      files = (await readdir(INPUT_DIR)).filter((f) => f.endsWith('.json'));
+      // "_" 접두 파일은 템플릿/예시로 간주해 수집에서 제외한다(예: _template.agenda.json).
+      files = (await readdir(INPUT_DIR)).filter((f) => f.endsWith('.json') && !f.startsWith('_'));
     } catch {
       return []; // 입력 폴더가 아직 없으면 빈 수집(정상)
     }

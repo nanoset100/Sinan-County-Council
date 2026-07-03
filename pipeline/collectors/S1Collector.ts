@@ -73,6 +73,11 @@ export class S1Collector implements Collector {
     return rows.map((row) => this.toRaw('member', row, ''));
   }
 
+  /** 집행부 공보(F3)는 S4(신안군 공보)에서 오며 S1 API 엔드포인트가 없다 → 빈 배열. */
+  async collectExecutives(): Promise<RawRecord[]> {
+    return [];
+  }
+
   private async collectListWithDetail(
     endpoint: string,
     kind: RecordKind,

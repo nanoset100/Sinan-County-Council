@@ -1,0 +1,31 @@
+[
+  {
+    "_주석": "안건(agenda) 수기 입력 템플릿. 이 파일은 '_' 접두라 수집에서 제외됩니다. 복사해 sinan-2026-bill-001.json 등으로 저장 후 값을 채우세요. 원문은 신안군의회 홈페이지(S2)를 보고 옮깁니다. 가이드: docs/manual-input.md",
+    "kind": "agenda",
+    "sourceUrl": "https://council.shinan.go.kr/… (해당 안건 원문 페이지 URL — 필수, 정본)",
+    "sourceText": "의안요지(BI_OUTLINE) 원문 그대로 붙여넣기 — A1 요약의 근거 대조(Verifier)에 쓰임",
+    "snapshotPath": null,
+    "data": {
+      "id": "2026-bill-001",
+      "clik_docid": null,
+      "title": "안건 제목(BI_SJ) 그대로",
+      "bill_no": "의안번호(BI_NO) 또는 null",
+      "type": "조례 | 예산 | 동의/승인 | 건의 | 결의 | 청원 | 기타",
+      "proposer": { "type": "의원 | 집행부 | 위원장", "raw": "제안자 표기 그대로" },
+      "outline": "의안요지 원문 그대로(sourceText 와 동일 내용 권장)",
+      "timeline": [
+        { "stage": "제안", "date": "2026-08-01" },
+        { "stage": "위원회 심사", "date": "2026-08-20", "result": "원안가결" },
+        { "stage": "본회의 의결", "date": "2026-08-28", "result": "원안가결" },
+        { "stage": "이송", "date": null },
+        { "stage": "공포", "date": null, "no": null }
+      ],
+      "votes": { "recorded": false, "records": [] },
+      "related_members": [],
+      "related_dept": null,
+      "related_meetings": [],
+      "region_tags": [],
+      "files": []
+    }
+  }
+]

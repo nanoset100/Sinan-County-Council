@@ -19,6 +19,9 @@ export interface Collector {
 
   /** 의원 정보 수집 → RawRecord[] (kind='member'). */
   collectMembers(): Promise<RawRecord[]>;
+
+  /** 집행부 공보 수집 → RawRecord[] (kind='executive'). S1 은 해당 엔드포인트가 없어 빈 배열. */
+  collectExecutives(): Promise<RawRecord[]>;
 }
 
 /** COLLECTOR 환경변수로 어댑터를 선택한다. 기본은 manual (G0 통과 전 폴백). */

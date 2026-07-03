@@ -1,0 +1,19 @@
+[
+  {
+    "_주석": "회의록(meeting) 수기 입력 템플릿. v0.5 축소 범위: 회차 메타 + 원문 링크 중심(본문 전수 구조화는 하지 않음). minutes_html 은 비워두고 원문 링크(minutes_url)로 정본 접근을 보장합니다. 가이드: docs/manual-input.md",
+    "kind": "meeting",
+    "sourceUrl": "https://council.shinan.go.kr/… (회의록 원문 페이지/PDF URL — 필수)",
+    "sourceText": "",
+    "snapshotPath": null,
+    "data": {
+      "id": "2026-plenary-001",
+      "clik_docid": null,
+      "date": "2026-08-28",
+      "type": "본회의 | 상임위 | 특별위 | 행정사무감사",
+      "session": "제300회",
+      "agendas": ["2026-bill-001"],
+      "minutes_html": null,
+      "minutes_url": "https://council.shinan.go.kr/… (회의록 원문 링크 — 필수, 정본)"
+    }
+  }
+]

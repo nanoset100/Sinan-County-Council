@@ -29,6 +29,7 @@ async function main(): Promise<void> {
     ...(await collector.collectBills()),
     ...(await collector.collectMinutes()),
     ...(await collector.collectMembers()),
+    ...(await collector.collectExecutives()),
   ];
   console.log(`[수집] 원시 레코드 ${raw.length}건`);
 

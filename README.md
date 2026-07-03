@@ -53,11 +53,13 @@
 
 ```bash
 npm install
-npm test            # Verifier DoD 테스트
-npm run validate    # §8 스키마 검증
-npm run pipeline    # 수기 폴백으로 수집→검증 흐름(.pipeline-out/ 스테이징)
-npm run build       # Astro 정적 빌드
-npm run g0          # (인증키 확보 후) S1 신안군 커버리지 실증
+npm test              # Verifier DoD 테스트
+npm run validate      # data/ 게시 레코드 §8 스키마 검증
+npm run validate:input # data/manual-input 수기 입력을 정규화→§8 스키마 검증
+npm run pipeline      # 수기 수집→정규화→A1 초안→Verifier→diff(.pipeline-out/ 스테이징)
+npm run build         # Astro 정적 빌드
+npm run g0            # (인증키 확보 후) S1 신안군 커버리지 실증
 ```
 
-자세한 파이프라인 운영: [docs/pipeline.md](docs/pipeline.md)
+문서: [수기 입력 가이드](docs/manual-input.md) · [파이프라인 운영](docs/pipeline.md) ·
+[G0 판정·인증키](docs/G0-api-key-request.md) · [API 개방 요청 초안](docs/api-open-request.md)

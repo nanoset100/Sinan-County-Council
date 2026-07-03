@@ -1,0 +1,17 @@
+[
+  {
+    "_주석": "집행부 공보(executive) 수기 입력 템플릿. F3 — §5 한정 범위(군 공보 게시 항목만, 공보 원문 링크 필수). '_' 접두라 수집 제외. 가이드: docs/manual-input.md",
+    "kind": "executive",
+    "sourceUrl": "https://www.shinan.go.kr/… (군 공보 원문 URL — 필수, 정본)",
+    "sourceText": "",
+    "snapshotPath": null,
+    "data": {
+      "id": "exec-2026-001",
+      "dept": "부서명",
+      "title": "공보 제목 그대로",
+      "date": "2026-08-01",
+      "related_agendas": [],
+      "region_tags": []
+    }
+  }
+]
