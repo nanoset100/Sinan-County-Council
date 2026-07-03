@@ -70,4 +70,5 @@ npm run g0            # (인증키 확보 후) S1 신안군 커버리지 실증
   "샘플" 배지와 개발 배너로 구분한다. 배포 시 `SITE_FIXTURES=0` 으로 샘플을 끄고 `data/` 게시분만 렌더.
 
 문서: [수기 입력 가이드](docs/manual-input.md) · [파이프라인 운영](docs/pipeline.md) ·
+[AI 요약 검수 체크리스트](docs/review-checklist.md) · [§12-3 파일럿 리포트](docs/pilot-report.md) ·
 [G0 판정·인증키](docs/G0-api-key-request.md) · [API 개방 요청 초안](docs/api-open-request.md)
