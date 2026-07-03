@@ -8,6 +8,9 @@ dist/
 # 파이프라인 스테이징 (검수·머지 전 자리표시, §6)
 .pipeline-out/
 
+# 로컬 미리보기 설정(머신 종속 절대경로 포함)
+.claude/launch.json
+
 # env & secrets (인증키 절대 커밋 금지 — PRD §9)
 .env
 .env.local

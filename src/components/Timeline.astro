@@ -1,0 +1,18 @@
+---
+import { annotateGlossary } from "../lib/glossary";
+interface Stage { stage: string; date?: string | null; result?: string | null; no?: string | null }
+interface Props { timeline: Stage[] }
+const { timeline } = Astro.props;
+---
+<ol class="stack" style="list-style:none;padding:0;margin:0">
+  {timeline.map((t) => (
+    <li class="card" style="padding:0.6rem 0.9rem">
+      <div class="row" style="justify-content:space-between">
+        <strong set:html={annotateGlossary(t.stage)} />
+        <span class="muted">{t.date ?? "일자 미기재"}</span>
+      </div>
+      {t.result && <div set:html={"결과: " + annotateGlossary(t.result)} />}
+      {t.no && <div class="muted">번호: {t.no}</div>}
+    </li>
+  ))}
+</ol>

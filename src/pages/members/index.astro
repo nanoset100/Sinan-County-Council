@@ -1,0 +1,22 @@
+---
+import Layout from "../../components/Layout.astro";
+import { getMembers } from "../../lib/content";
+const members = getMembers();
+---
+<Layout title="의원 — 신안군 의정활동 공개 포털">
+  <h1>의원 명부</h1>
+  <p class="muted">제10대 신안군의회 의원입니다. 집계 수치는 각 의원 페이지 안에서만 표시하며, 의원 간 순위·비교 UI는 제공하지 않습니다(§0-4).</p>
+  <ul class="stack" style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1rem">
+    {members.map((m) => (
+      <li class="card">
+        <div class="row" style="justify-content:space-between">
+          <a href={`/members/${m.id}`} style="font-weight:700;font-size:var(--fs-lg)">{m.name}</a>
+          {m.isSample && <span class="badge">샘플</span>}
+        </div>
+        <div class="muted">{m.district ?? "선거구 미기재"} · {m.party ?? "정당 미기재"}</div>
+        <div class="muted">{m.term}{m.committees && m.committees.length > 0 && ` · ${m.committees.join(", ")}`}</div>
+      </li>
+    ))}
+  </ul>
+  {members.length === 0 && <p class="muted">등록된 의원이 없습니다.</p>}
+</Layout>

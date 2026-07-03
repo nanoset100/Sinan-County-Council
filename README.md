@@ -61,5 +61,13 @@ npm run build         # Astro 정적 빌드
 npm run g0            # (인증키 확보 후) S1 신안군 커버리지 실증
 ```
 
+### 프론트엔드 (Astro SSG)
+`src/pages` 에 F1~F8 페이지 구현: 홈, 안건 목록/상세(AI 요약 블록·§14-4 라벨·원문 대조·용어 주석),
+의원 명부/상세(순위 UI 없음), 회의록, 집행부, 데이터 정책·정정 폼, AI 투명성 페이지. 공통 레이아웃에
+중립성 푸터·큰 글씨/고대비 토글·스킵 링크(WCAG AA 지향).
+
+- `npm run dev` 개발 서버. 실데이터(신안 제10대)가 아직 없어 `fixtures/` 의 **샘플**을 함께 로드하며
+  "샘플" 배지와 개발 배너로 구분한다. 배포 시 `SITE_FIXTURES=0` 으로 샘플을 끄고 `data/` 게시분만 렌더.
+
 문서: [수기 입력 가이드](docs/manual-input.md) · [파이프라인 운영](docs/pipeline.md) ·
 [G0 판정·인증키](docs/G0-api-key-request.md) · [API 개방 요청 초안](docs/api-open-request.md)

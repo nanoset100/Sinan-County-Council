@@ -1,0 +1,62 @@
+---
+import Layout from "../../components/Layout.astro";
+import { getAgendas, firstDate, hasPublishableSummary } from "../../lib/content";
+const agendas = getAgendas();
+const types = [...new Set(agendas.map((a) => a.type).filter(Boolean))];
+---
+<Layout title="안건 — 신안군 의정활동 공개 포털">
+  <h1>안건</h1>
+  <p class="muted">제10대 개원 이후 안건을 전수 수록합니다(검수 완료분 게시). 각 안건에 원문 링크와 검수된 AI 요약(또는 미제공 표시)을 답니다.</p>
+
+  <div class="row" style="margin:1rem 0">
+    <label for="filter" class="visually-hidden">안건 검색</label>
+    <input id="filter" type="search" placeholder="제목·제안자로 거르기"
+      style="flex:1;min-width:12rem;padding:0.6rem;border:1px solid var(--c-border);border-radius:var(--radius)" />
+    <select id="type" style="padding:0.6rem;border:1px solid var(--c-border);border-radius:var(--radius)">
+      <option value="">유형 전체</option>
+      {types.map((t) => <option value={t}>{t}</option>)}
+    </select>
+  </div>
+
+  <ul id="list" class="stack" style="list-style:none;padding:0">
+    {agendas.map((a) => (
+      <li class="card agenda-item" data-title={a.title + " " + a.proposer.raw} data-type={a.type}>
+        <div class="row" style="justify-content:space-between">
+          <a href={`/agendas/${a.id}`} style="font-weight:600">{a.title}</a>
+          <span class="row">
+            {a.isSample && <span class="badge">샘플</span>}
+            <span class="badge">{a.type}</span>
+          </span>
+        </div>
+        <div class="muted">{firstDate(a)} · 제안 {a.proposer.raw}</div>
+        <div class="muted">{hasPublishableSummary(a.ai_content) ? "🤖 AI 요약 있음" : "AI 요약 미제공"}
+          {a.region_tags && a.region_tags.length > 0 && <span> · {a.region_tags.join(", ")}</span>}
+        </div>
+      </li>
+    ))}
+  </ul>
+  {agendas.length === 0 && <p class="muted">등록된 안건이 없습니다.</p>}
+
+  <script is:inline>
+    (function () {
+      var q = document.getElementById("filter");
+      var ty = document.getElementById("type");
+      var items = Array.prototype.slice.call(document.querySelectorAll(".agenda-item"));
+      // URL ?q= 초기값
+      var params = new URLSearchParams(location.search);
+      if (params.get("q")) q.value = params.get("q");
+      function apply() {
+        var text = (q.value || "").toLowerCase();
+        var t = ty.value;
+        items.forEach(function (el) {
+          var okText = el.getAttribute("data-title").toLowerCase().indexOf(text) !== -1;
+          var okType = !t || el.getAttribute("data-type") === t;
+          el.style.display = okText && okType ? "" : "none";
+        });
+      }
+      q.addEventListener("input", apply);
+      ty.addEventListener("change", apply);
+      apply();
+    })();
+  </script>
+</Layout>

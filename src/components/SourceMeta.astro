@@ -1,0 +1,15 @@
+---
+import type { Meta } from "../lib/content";
+interface Props { meta: Meta; label?: string }
+const { meta, label = "출처 보기" } = Astro.props;
+const alive = meta.source_alive !== false;
+---
+<div class="muted row" style="gap:0.75rem">
+  <a href={meta.source_url} target="_blank" rel="noopener noreferrer">🔗 {label}</a>
+  {!alive && meta.snapshot_path && (
+    <span class="badge">원문 링크 변경됨 · <a href={meta.snapshot_path}>스냅샷</a></span>
+  )}
+  <span>수집일 {meta.collected_at}</span>
+  {meta.reviewed_at && <span>· 검수일 {meta.reviewed_at}</span>}
+  <span class="badge">{meta.source_system}</span>
+</div>

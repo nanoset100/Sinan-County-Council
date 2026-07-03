@@ -1,22 +1,53 @@
 ---
-// 배치 1 자리표시 홈. 프론트엔드(F1 홈 대시보드)는 배치 2에서 구현한다.
-// 이 페이지는 Astro 빌드 파이프라인이 동작함을 확인하기 위한 최소 진입점이다.
-const buildDate = new Date().toISOString().slice(0, 10);
----
+import Layout from "../components/Layout.astro";
+import { getAgendas, getMeetings, getMembers, getExecutives, firstDate } from "../lib/content";
 
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>신안군 의정활동 공개 포털 (준비 중)</title>
-  </head>
-  <body>
-    <main>
-      <h1>신안군 의정활동 공개 포털</h1>
-      <p>본 사이트는 공개된 공식 기록을 정리한 비영리 시민 정보 서비스이며 특정 정당·후보와 무관합니다.</p>
-      <p><strong>현재 상태:</strong> 기반 구축(배치 1) — 데이터 모델·파이프라인 골격. 화면(F1~F8)은 준비 중입니다.</p>
-      <p><small>빌드일: {buildDate}</small></p>
-    </main>
-  </body>
-</html>
+const agendas = getAgendas();
+const meetings = getMeetings();
+const members = getMembers();
+const executives = getExecutives();
+
+type Item = { date: string; kind: string; title: string; href: string };
+const recent: Item[] = [
+  ...agendas.map((a) => ({ date: firstDate(a), kind: "안건", title: a.title, href: `/agendas/${a.id}` })),
+  ...meetings.map((m) => ({ date: m.date, kind: "회의록", title: `${m.session ?? ""} ${m.type}`.trim(), href: `/meetings` })),
+  ...executives.map((e) => ({ date: e.date, kind: "집행부", title: e.title, href: `/executive` })),
+].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")).slice(0, 10);
+
+const lastUpdated = recent[0]?.date ?? "-";
+---
+<Layout>
+  <h1>신안군 의정활동, 읽기 쉽게.</h1>
+  <p class="muted">판단은 군민이, 번역은 AI가. 공개된 공식 기록을 한곳에 모아 출처와 함께 공개합니다.</p>
+
+  <form action="/agendas" method="get" class="row" style="margin:1rem 0" role="search">
+    <label for="q" class="visually-hidden">검색어</label>
+    <input id="q" name="q" type="search" placeholder="안건·의원·키워드 검색"
+      style="flex:1;min-width:12rem;padding:0.6rem;border:1px solid var(--c-border);border-radius:var(--radius)" />
+    <button type="submit" class="badge" style="padding:0.6rem 1rem">검색</button>
+  </form>
+
+  <section class="row" style="gap:1rem;margin:1rem 0">
+    <div class="card"><strong>{agendas.length}</strong><div class="muted">등록 안건</div></div>
+    <div class="card"><strong>{meetings.length}</strong><div class="muted">회의록</div></div>
+    <div class="card"><strong>{members.length}</strong><div class="muted">의원</div></div>
+    <div class="card"><strong>{lastUpdated}</strong><div class="muted">최근 갱신</div></div>
+  </section>
+
+  <h2>최근 기록</h2>
+  {recent.length === 0 ? (
+    <p class="muted">아직 게시된 기록이 없습니다.</p>
+  ) : (
+    <ul class="stack" style="list-style:none;padding:0">
+      {recent.map((r) => (
+        <li class="card">
+          <div class="row" style="justify-content:space-between">
+            <a href={r.href} style="font-weight:600">{r.title}</a>
+            <span class="badge">{r.kind}</span>
+          </div>
+          <div class="muted">{r.date}</div>
+        </li>
+      ))}
+    </ul>
+  )}
+</Layout>

@@ -1,0 +1,37 @@
+---
+import Layout from "../../components/Layout.astro";
+import SourceMeta from "../../components/SourceMeta.astro";
+import { getMembers, getAgendas, firstDate } from "../../lib/content";
+
+export function getStaticPaths() {
+  return getMembers().map((m) => ({ params: { id: m.id }, props: { member: m } }));
+}
+const { member } = Astro.props;
+// 발의 안건 전수 — 관계는 안건의 related_members 로 역참조.
+const proposed = getAgendas().filter((a) => (a.related_members ?? []).includes(member.id));
+---
+<Layout title={`${member.name} — 의원`}>
+  <p class="muted"><a href="/members">← 의원 명부</a></p>
+  <div class="row" style="justify-content:space-between">
+    <h1 style="margin-bottom:0.25rem">{member.name}</h1>
+    {member.isSample && <span class="badge">샘플</span>}
+  </div>
+  <div class="muted">{member.district ?? "선거구 미기재"} · {member.party ?? "정당 미기재"} · {member.term}</div>
+  {member.committees && member.committees.length > 0 && <p>상임위: {member.committees.join(", ")}</p>}
+
+  <h2>관련 안건 <span class="muted" style="font-weight:400">(이 페이지 내 집계: {proposed.length}건)</span></h2>
+  {proposed.length === 0 ? (
+    <p class="muted">연결된 안건이 없습니다.</p>
+  ) : (
+    <ul class="stack" style="list-style:none;padding:0">
+      {proposed.map((a) => (
+        <li class="card"><a href={`/agendas/${a.id}`} style="font-weight:600">{a.title}</a>
+          <div class="muted">{firstDate(a)} · {a.type}</div></li>
+      ))}
+    </ul>
+  )}
+
+  <p class="muted" style="margin-top:1rem">표결: 개별 표결 기록 없음(기록상 무기명 처리)</p>
+  <hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--c-border)" />
+  <SourceMeta meta={member._meta} label="의원 정보 원문" />
+</Layout>

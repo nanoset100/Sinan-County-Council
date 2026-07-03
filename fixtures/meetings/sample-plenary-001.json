@@ -1,0 +1,19 @@
+{
+  "id": "sample-plenary-001",
+  "clik_docid": null,
+  "date": "2026-08-28",
+  "type": "본회의",
+  "session": "제335회",
+  "agendas": ["sample-bill-001"],
+  "minutes_html": null,
+  "minutes_url": "https://council.shinan.go.kr/sample/minutes/1",
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr/sample/minutes/1",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-03",
+    "reviewed_by": "SAMPLE-검수전",
+    "reviewed_at": null
+  }
+}

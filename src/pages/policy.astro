@@ -1,0 +1,51 @@
+---
+import Layout from "../components/Layout.astro";
+---
+<Layout title="데이터 정책 — 신안군 의정활동 공개 포털">
+  <h1>데이터 정책</h1>
+
+  <h2>출처</h2>
+  <ul>
+    <li>신안군의회 홈페이지(council.shinan.go.kr) — 안건·회의록 원문(정본).</li>
+    <li>자치법규정보시스템(ELIS) — 조례·규칙 현행 원문.</li>
+    <li>신안군청 공보·고시공고 — 집행부 정책·공보.</li>
+    <li>국회도서관 지방의정포털(clik.nanet.go.kr) — 구조화 데이터(신안군 반영 시 연계 예정).</li>
+  </ul>
+
+  <h2>수집 범위 (기계적 기준)</h2>
+  <p>제10대 개원(2026-07) 이후 발생분을 전수 수록합니다. 현재는 <strong>수기 주도형</strong>으로,
+    안건은 메타·타임라인·원문 링크를 전수 수록하고, 회의록은 회차 메타·원문 링크 중심으로 제공합니다
+    (발언 구조화 전수는 축소). 포함 기준은 골라 싣지 않으며, 검수 대기 건수는 아래에 공개합니다.</p>
+
+  <h2>갱신·검수 절차</h2>
+  <p>모든 자동 수집·생성 데이터는 <strong>운영자 검수·승인 전에는 게시하지 않습니다</strong>(무검수 게시 금지).
+    각 항목에 수집일·검수일을 표시합니다.</p>
+  <table>
+    <thead><tr><th>티어</th><th>대상</th><th>SLA(회기 중)</th><th>SLA(폐회 중)</th></tr></thead>
+    <tbody>
+      <tr><td>T1</td><td>안건 데이터 + AI 요약 + 집행부 공보</td><td>7일</td><td>7일</td></tr>
+      <tr><td>T2</td><td>회의록 메타 + 원문 링크</td><td>14일</td><td>7일</td></tr>
+      <tr><td>T3</td><td>발언 구조화 + 읍면 태그 + 연결</td><td>21일</td><td>14일</td></tr>
+    </tbody>
+  </table>
+
+  <h2>AI 이용 원칙</h2>
+  <p>AI는 공식 기록의 가독성을 높이는 데만 씁니다. 평가·순위·성향·예측은 만들지 않습니다.
+    자세한 내용은 <a href="/ai">AI 이용 안내</a>.</p>
+
+  <h2>선거 기간 운영 정책</h2>
+  <p>선거 기간에는 상단에 추가 고지 배너를 노출하고, 신규 AI 요약 게시와 런타임 질의응답을 일시 중단하는 정책을
+    법률 검토 결과에 따라 확정·공개합니다.</p>
+
+  <h2 id="correction">정정 요청 / AI 오류 신고</h2>
+  <p>사실과 다른 내용이나 AI 요약 오류를 발견하시면 접수해 주세요. 7일 내 원문과 대조해 처리하고, 정정 이력을 공개합니다.</p>
+  <!-- 실제 전송 엔드포인트는 배포 시 Formspree 등으로 교체. 지금은 이메일 폴백. -->
+  <form action="mailto:CONTACT-ADDRESS@example.org" method="post" enctype="text/plain" class="stack card" style="max-width:36rem">
+    <label>이름<br /><input name="name" required style="width:100%;padding:0.5rem" /></label>
+    <label>연락처(선택)<br /><input name="contact" style="width:100%;padding:0.5rem" /></label>
+    <label>대상 항목(URL 등)<br /><input name="target" required style="width:100%;padding:0.5rem" /></label>
+    <label>내용·근거<br /><textarea name="detail" required rows="4" style="width:100%;padding:0.5rem"></textarea></label>
+    <button type="submit" class="badge" style="padding:0.6rem 1rem">정정 요청 보내기</button>
+  </form>
+  <p class="muted">※ 배포 시 전송 폼으로 교체 예정. 급한 사안은 이메일로 직접 연락 주세요.</p>
+</Layout>

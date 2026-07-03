@@ -1,0 +1,26 @@
+---
+import Layout from "../../components/Layout.astro";
+import SourceMeta from "../../components/SourceMeta.astro";
+import { getMeetings } from "../../lib/content";
+const meetings = getMeetings();
+---
+<Layout title="회의록 — 신안군 의정활동 공개 포털">
+  <h1>회의록 아카이브</h1>
+  <p class="muted">본회의·상임위·특별위·행정사무감사 회의록입니다. 원문(정본)은 각 항목의 링크로 열람할 수 있습니다.
+    (수기 주도형 단계에서는 회차 메타·원문 링크 중심으로 제공하며, 발언 구조화는 우선순위에 따라 순차 추가됩니다.)</p>
+  {meetings.length === 0 ? (
+    <p class="muted">등록된 회의록이 없습니다.</p>
+  ) : (
+    <ul class="stack" style="list-style:none;padding:0">
+      {meetings.map((m) => (
+        <li class="card">
+          <div class="row" style="justify-content:space-between">
+            <strong>{m.session ?? ""} {m.type}</strong>
+            <span class="row">{m.isSample && <span class="badge">샘플</span>}<span class="muted">{m.date}</span></span>
+          </div>
+          <div style="margin-top:0.4rem"><SourceMeta meta={m._meta} label="회의록 원문 보기" /></div>
+        </li>
+      ))}
+    </ul>
+  )}
+</Layout>

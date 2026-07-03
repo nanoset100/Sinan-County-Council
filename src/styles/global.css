@@ -1,0 +1,144 @@
+/*
+ * 전역 스타일 & 디자인 토큰 (PRD v0.5 §9 접근성).
+ * - 중립성(§0-1): 정당·진영을 연상시키는 색을 쓰지 않는다. 중립적인 청/회색 팔레트.
+ * - 접근성: WCAG AA 대비, 모바일 우선, 큰 글씨/고대비 토글(html[data-text-size][data-contrast]).
+ */
+
+:root {
+  --font-sans: "Pretendard", "Malgun Gothic", system-ui, -apple-system, sans-serif;
+
+  /* 중립 팔레트 */
+  --c-bg: #ffffff;
+  --c-surface: #f5f7fa;
+  --c-border: #d5dbe2;
+  --c-text: #1a1f26;
+  --c-text-muted: #545c66;
+  --c-primary: #2a5a8c;      /* 중립적인 남색 계열 */
+  --c-primary-fg: #ffffff;
+  --c-link: #1c4e80;
+  --c-ai-bg: #eef4fb;        /* AI 요약 블록 배경(구분용, 평가색 아님) */
+  --c-ai-border: #a9c6e6;
+  --c-warn-bg: #fff6e6;
+  --c-warn-border: #e6b866;
+
+  --radius: 8px;
+  --space: 1rem;
+  --maxw: 60rem;
+
+  --fs-base: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.75rem;
+  --lh: 1.65;
+}
+
+/* 큰 글씨 모드 (고령 사용자, §9) */
+html[data-text-size="large"] {
+  --fs-base: 1.25rem;
+  --fs-sm: 1.05rem;
+  --fs-lg: 1.55rem;
+  --fs-xl: 2.1rem;
+  --lh: 1.75;
+}
+
+/* 고대비 모드 */
+html[data-contrast="high"] {
+  --c-bg: #ffffff;
+  --c-surface: #ffffff;
+  --c-border: #000000;
+  --c-text: #000000;
+  --c-text-muted: #1a1a1a;
+  --c-primary: #00366e;
+  --c-link: #00366e;
+  --c-ai-bg: #ffffff;
+  --c-ai-border: #000000;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh);
+  color: var(--c-text);
+  background: var(--c-bg);
+}
+
+a { color: var(--c-link); }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--c-primary);
+  outline-offset: 2px;
+}
+
+h1 { font-size: var(--fs-xl); line-height: 1.3; }
+h2 { font-size: var(--fs-lg); line-height: 1.35; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space); }
+
+/* 스킵 링크 (키보드 접근성) */
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--c-primary); color: var(--c-primary-fg);
+  padding: 0.5rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* 카드 */
+.card {
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: var(--space);
+}
+
+.muted { color: var(--c-text-muted); font-size: var(--fs-sm); }
+
+.badge {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  color: var(--c-text-muted);
+}
+
+/* AI 요약 블록 (§14-4 라벨 규칙) */
+.ai-block {
+  background: var(--c-ai-bg);
+  border: 1px solid var(--c-ai-border);
+  border-radius: var(--radius);
+  padding: var(--space);
+  margin: var(--space) 0;
+}
+.ai-label {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* 경고/공지 배너 */
+.banner-warn {
+  background: var(--c-warn-bg);
+  border: 1px solid var(--c-warn-border);
+  border-radius: var(--radius);
+  padding: 0.75rem var(--space);
+}
+
+/* 용어 주석 (A5) */
+.term {
+  border-bottom: 1px dotted var(--c-primary);
+  cursor: help;
+}
+
+/* 유틸 */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.stack > * + * { margin-top: var(--space); }
+.row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }

@@ -1,0 +1,47 @@
+{
+  "id": "sample-bill-001",
+  "clik_docid": null,
+  "title": "[샘플] 신안군 농어촌버스 요금 지원 조례안",
+  "bill_no": "제10-1호",
+  "type": "조례",
+  "proposer": { "type": "의원", "raw": "홍길동 의원 외 2인" },
+  "outline": "이 조례는 신안군에 주민등록을 둔 65세 이상 주민의 농어촌버스 요금을 지원하는 것을 목적으로 한다. 시행일은 2026년 9월 1일로 한다.",
+  "timeline": [
+    { "stage": "제안", "date": "2026-08-01" },
+    { "stage": "위원회 심사", "date": "2026-08-20", "result": "원안가결" },
+    { "stage": "본회의 의결", "date": "2026-08-28", "result": "원안가결" }
+  ],
+  "votes": { "recorded": false, "records": [] },
+  "related_members": ["member-9001"],
+  "related_dept": null,
+  "related_meetings": ["sample-plenary-001"],
+  "region_tags": ["임자면", "압해읍"],
+  "files": [],
+  "ai_content": {
+    "generated_at": "2026-07-03",
+    "model": "샘플(미생성)",
+    "verifier_passed": true,
+    "reviewed_by": "SAMPLE-검수자",
+    "reviewed_at": "2026-07-03",
+    "summary_one_line": "65세 이상 신안군민의 농어촌버스 요금을 지원하는 조례안입니다.",
+    "what_changes": [
+      {
+        "text": "신안군에 주민등록을 둔 65세 이상 주민의 농어촌버스 요금을 지원합니다.",
+        "anchor": { "url": "https://council.shinan.go.kr/sample/bill/1", "quote": "65세 이상 주민의 농어촌버스 요금을 지원하는 것을 목적으로 한다" }
+      }
+    ],
+    "who_affected": {
+      "text": "신안군에 주민등록을 둔 65세 이상 주민에게 적용되며, 시행일은 2026년 9월 1일입니다.",
+      "anchor": { "url": "https://council.shinan.go.kr/sample/bill/1", "quote": "시행일은 2026년 9월 1일로 한다" }
+    }
+  },
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr/sample/bill/1",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-03",
+    "reviewed_by": "SAMPLE-검수자",
+    "reviewed_at": "2026-07-03"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "member-9001",
+  "name": "홍길동(샘플)",
+  "photo_url": null,
+  "district": "샘플 선거구 가",
+  "party": "샘플정당",
+  "term": "제10대",
+  "committees": ["행정복지위원회"],
+  "links": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr/sample/member/9001",
+    "source_system": "MANUAL",
+    "collected_at": "2026-07-03",
+    "reviewed_by": "SAMPLE-검수전",
+    "reviewed_at": null
+  }
+}

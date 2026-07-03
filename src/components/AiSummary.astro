@@ -1,0 +1,49 @@
+---
+import type { AiContent } from "../lib/content";
+import { annotateGlossary } from "../lib/glossary";
+interface Props { ai?: AiContent; sourceText: string; sourceUrl: string }
+const { ai, sourceText, sourceUrl } = Astro.props;
+
+// §14-2/§11: 게시 가능한 요약은 verifier 통과 + 사람 검수 완료.
+const publishable = !!ai && ai.verifier_passed && !!ai.reviewed_by;
+---
+{publishable ? (
+  <section class="ai-block" aria-label="AI 요약">
+    <div class="ai-label">🤖 AI 요약 · 운영자 검수 완료 · <a href={sourceUrl} target="_blank" rel="noopener noreferrer">원문 보기</a></div>
+    <p style="margin:0 0 0.5rem;font-weight:600" set:html={annotateGlossary(ai!.summary_one_line)} />
+
+    {ai!.what_changes && ai!.what_changes.length > 0 && (
+      <div class="stack" style="margin-top:0.5rem">
+        <div class="muted">무엇이 어떻게 바뀌나</div>
+        {ai!.what_changes.map((c) => (
+          <p style="margin:0">
+            <span set:html={annotateGlossary(c.text)} />
+            {c.anchor?.quote && <span class="muted" style="display:block">근거: “{c.anchor.quote}”</span>}
+          </p>
+        ))}
+      </div>
+    )}
+
+    {ai!.who_affected && (
+      <div class="stack" style="margin-top:0.5rem">
+        <div class="muted">누구에게 적용되나</div>
+        <p style="margin:0"><span set:html={annotateGlossary(ai!.who_affected.text)} /></p>
+      </div>
+    )}
+
+    <!-- 원문 대조 (§14-4) -->
+    <details style="margin-top:0.75rem">
+      <summary>원문과 대조하기</summary>
+      <blockquote style="border-left:3px solid var(--c-ai-border);margin:0.5rem 0;padding-left:0.75rem;white-space:pre-wrap">{sourceText}</blockquote>
+    </details>
+
+    <p class="muted" style="margin:0.75rem 0 0">
+      🤖 이 요약은 AI가 원문을 재서술한 것입니다. <a href="/policy#correction">오류 신고</a> · 원문이 정본입니다.
+      {ai!.model && <span> · 모델: {ai!.model}</span>}
+    </p>
+  </section>
+) : (
+  <section class="banner-warn" aria-label="AI 요약 미제공">
+    <strong>AI 요약 미제공</strong> — 이 안건은 아직 검수된 AI 요약이 없습니다. 아래 원문(의안요지)을 참고하세요.
+  </section>
+)}

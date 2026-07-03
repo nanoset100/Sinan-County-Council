@@ -1,0 +1,100 @@
+---
+import "../styles/global.css";
+import { hasSampleData } from "../lib/content";
+
+interface Props { title?: string; description?: string }
+const { title = "신안군 의정활동 공개 포털", description = "공개된 공식 기록에 근거해 신안군의회와 집행부 활동을 중립적으로 공개합니다." } = Astro.props;
+const showSampleBanner = hasSampleData();
+const nav = [
+  { href: "/", label: "홈" },
+  { href: "/agendas", label: "안건" },
+  { href: "/members", label: "의원" },
+  { href: "/meetings", label: "회의록" },
+  { href: "/executive", label: "집행부" },
+  { href: "/policy", label: "데이터 정책" },
+  { href: "/ai", label: "AI 안내" },
+];
+---
+
+<!doctype html>
+<html lang="ko" data-text-size="default" data-contrast="normal">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- 저장된 접근성 설정을 페인트 전에 적용(깜빡임 방지) -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("pref-text-size");
+          var c = localStorage.getItem("pref-contrast");
+          if (t) document.documentElement.setAttribute("data-text-size", t);
+          if (c) document.documentElement.setAttribute("data-contrast", c);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문 바로가기</a>
+
+    <header style="border-bottom:1px solid var(--c-border);background:var(--c-surface)">
+      <div class="container" style="padding-top:0.5rem;padding-bottom:0.5rem">
+        <div class="row" style="justify-content:space-between">
+          <a href="/" style="font-weight:800;text-decoration:none;color:var(--c-text)">신안군 의정활동 공개 포털</a>
+          <div class="row" role="group" aria-label="화면 접근성 설정">
+            <button type="button" id="btn-text" class="badge" aria-pressed="false">가 큰 글씨</button>
+            <button type="button" id="btn-contrast" class="badge" aria-pressed="false">고대비</button>
+          </div>
+        </div>
+        <nav aria-label="주요 메뉴" class="row" style="margin-top:0.5rem;gap:0.75rem">
+          {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    {showSampleBanner && (
+      <div class="banner-warn"><div class="container">
+        ⚠️ <strong>개발 미리보기</strong> — 지금 보이는 데이터에는 <strong>샘플</strong>이 포함돼 있습니다(실제 게시 자료 아님). 신안군 제10대 실데이터는 확보되는 대로 대체됩니다.
+      </div></div>
+    )}
+
+    <main id="main" class="container" style="padding-top:1.5rem;padding-bottom:2rem" tabindex="-1">
+      <slot />
+    </main>
+
+    <footer style="border-top:1px solid var(--c-border);background:var(--c-surface)">
+      <div class="container stack" style="padding-top:1.25rem;padding-bottom:1.25rem">
+        <p class="muted" style="margin:0">
+          본 사이트는 공개된 공식 기록을 정리한 <strong>비영리 시민 정보 서비스</strong>이며 특정 정당·후보와 무관합니다.
+          모든 콘텐츠는 원문 출처를 링크하며, 판단은 군민의 몫입니다.
+        </p>
+        <p class="muted" style="margin:0.5rem 0 0">
+          <a href="/policy">데이터 정책·수집 범위·검수 절차</a> ·
+          <a href="/ai">AI 이용 안내</a> ·
+          <a href="/policy#correction">정정 요청</a>
+        </p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        function toggle(btn, attr, key, onVal) {
+          if (!btn) return;
+          var html = document.documentElement;
+          var active = html.getAttribute(attr) === onVal;
+          btn.setAttribute("aria-pressed", String(active));
+          btn.addEventListener("click", function () {
+            active = html.getAttribute(attr) === onVal;
+            var next = active ? (attr === "data-text-size" ? "default" : "normal") : onVal;
+            html.setAttribute(attr, next);
+            try { localStorage.setItem(key, next); } catch (e) {}
+            btn.setAttribute("aria-pressed", String(next === onVal));
+          });
+        }
+        toggle(document.getElementById("btn-text"), "data-text-size", "pref-text-size", "large");
+        toggle(document.getElementById("btn-contrast"), "data-contrast", "pref-contrast", "high");
+      })();
+    </script>
+  </body>
+</html>

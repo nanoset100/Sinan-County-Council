@@ -1,0 +1,26 @@
+---
+import Layout from "../../components/Layout.astro";
+import SourceMeta from "../../components/SourceMeta.astro";
+import { getExecutives } from "../../lib/content";
+const executives = getExecutives();
+---
+<Layout title="집행부 — 신안군 의정활동 공개 포털">
+  <h1>집행부(군수·부서) 공개</h1>
+  <p class="muted">§5 한정 범위 — 의회 제출 안건의 제출 주체 기록과 신안군 공보 게시 항목(공보 원문 링크 필수)만 수록합니다. 언론 보도 등 공보 외 출처는 싣지 않습니다.</p>
+  {executives.length === 0 ? (
+    <p class="muted">등록된 집행부 공보가 없습니다.</p>
+  ) : (
+    <ul class="stack" style="list-style:none;padding:0">
+      {executives.map((e) => (
+        <li class="card">
+          <div class="row" style="justify-content:space-between">
+            <strong>{e.title}</strong>
+            <span class="row">{e.isSample && <span class="badge">샘플</span>}<span class="badge">{e.dept}</span></span>
+          </div>
+          <div class="muted">{e.date}</div>
+          <div style="margin-top:0.4rem"><SourceMeta meta={e._meta} label="공보 원문 보기" /></div>
+        </li>
+      ))}
+    </ul>
+  )}
+</Layout>
