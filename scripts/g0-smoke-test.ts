@@ -21,6 +21,13 @@ function arg(name: string): string | undefined {
   return hit?.split('=')[1];
 }
 
+// rasmblyId 필터는 searchType 이 비-ALL 이고 searchKeyword 가 빈값일 때만 적용된다(2026-07 실측).
+const SEARCH_TYPE: Record<string, string> = {
+  'bill.do': 'BI_SJ',
+  'minutes.do': 'RASMBLY_NM',
+  'assemblyinfo.do': 'RASMBLY_NM',
+};
+
 async function probe(endpoint: string, key: string, rasmblyId: string): Promise<void> {
   const url = new URL(`${BASE_URL}/${endpoint}`);
   url.searchParams.set('key', key);
@@ -28,7 +35,8 @@ async function probe(endpoint: string, key: string, rasmblyId: string): Promise<
   url.searchParams.set('displayType', 'list');
   url.searchParams.set('startCount', '0');
   url.searchParams.set('listCount', '5');
-  url.searchParams.set('searchType', 'ALL');
+  url.searchParams.set('searchType', SEARCH_TYPE[endpoint] ?? 'BI_SJ');
+  url.searchParams.set('searchKeyword', '');
   url.searchParams.set('rasmblyId', rasmblyId);
   const safe = url.toString().replace(key, '***');
 

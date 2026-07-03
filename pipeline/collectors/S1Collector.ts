@@ -59,17 +59,17 @@ export class S1Collector implements Collector {
 
   /** 의안(안건) — bill.do. 목록 + (옵션) 상세 병합. */
   async collectBills(): Promise<RawRecord[]> {
-    return this.collectListWithDetail('bill.do', 'agenda', (row) => String(row.BI_OUTLINE ?? row.BI_SJ ?? ''));
+    return this.collectListWithDetail('bill.do', 'BI_SJ', 'agenda', (row) => String(row.BI_OUTLINE ?? row.BI_SJ ?? ''));
   }
 
   /** 회의록 — minutes.do. 목록 + (옵션) 상세(MINTS_HTML) 병합. */
   async collectMinutes(): Promise<RawRecord[]> {
-    return this.collectListWithDetail('minutes.do', 'meeting', (row) => stripHtml(String(row.MINTS_HTML ?? '')));
+    return this.collectListWithDetail('minutes.do', 'RASMBLY_NM', 'meeting', (row) => stripHtml(String(row.MINTS_HTML ?? '')));
   }
 
-  /** 의원 — assemblyinfo.do. ⚠️ 명세 미확인(목록만, 상세 없음). G0 후 필드 확정. */
+  /** 의원 — assemblyinfo.do. ⚠️ 명세 미확인(목록만, 상세 없음). searchType 는 best-effort(RASMBLY_NM). */
   async collectMembers(): Promise<RawRecord[]> {
-    const rows = await this.fetchList('assemblyinfo.do');
+    const rows = await this.fetchList('assemblyinfo.do', 'RASMBLY_NM');
     return rows.map((row) => this.toRaw('member', row, ''));
   }
 
@@ -80,10 +80,11 @@ export class S1Collector implements Collector {
 
   private async collectListWithDetail(
     endpoint: string,
+    searchType: string,
     kind: RecordKind,
     sourceTextOf: (row: Record<string, unknown>) => string,
   ): Promise<RawRecord[]> {
-    const rows = await this.fetchList(endpoint);
+    const rows = await this.fetchList(endpoint, searchType);
     const out: RawRecord[] = [];
     for (const row of rows) {
       let merged = row;
@@ -112,8 +113,15 @@ export class S1Collector implements Collector {
     };
   }
 
-  /** 목록(displayType=list) 전체를 페이지네이션으로 수집. */
-  private async fetchList(endpoint: string): Promise<Array<Record<string, unknown>>> {
+  /**
+   * 목록(displayType=list) 전체를 페이지네이션으로 수집.
+   *
+   * ★ 필터 규칙(2026-07 실측): rasmblyId 는 `searchType`이 **비-ALL** 이고 `searchKeyword`가
+   *   **빈값**일 때만 적용된다. searchType=ALL 이면 rasmblyId 가 무시되어 전국이 반환된다.
+   *   따라서 특정 의회만 받으려면 엔드포인트별 비-ALL searchType 을 쓴다:
+   *     bill.do → BI_SJ,  minutes.do → RASMBLY_NM,  assemblyinfo.do → RASMBLY_NM(best-effort).
+   */
+  private async fetchList(endpoint: string, searchType: string): Promise<Array<Record<string, unknown>>> {
     const out: Array<Record<string, unknown>> = [];
     let startCount = 0;
 
@@ -122,7 +130,8 @@ export class S1Collector implements Collector {
         displayType: 'list',
         startCount: String(startCount),
         listCount: String(PAGE_SIZE),
-        searchType: 'ALL',
+        searchType,
+        searchKeyword: '', // 빈값이어야 rasmblyId 필터가 적용됨
       });
       const rows = (env.LIST ?? []).map((x) => x.ROW);
       out.push(...rows);
