@@ -10,7 +10,16 @@ import { join } from 'node:path';
  */
 
 const ROOT = process.cwd();
-const USE_FIXTURES = process.env.SITE_FIXTURES !== '0';
+
+/**
+ * 픽스처(샘플·가상 데이터)는 절대 프로덕션 빌드에 새어들면 안 된다(중립성 §0-1).
+ * ★ fail-closed: 기본은 OFF. 오직 개발 서버(astro dev → NODE_ENV=development)이거나
+ *   명시적으로 SITE_FIXTURES=1 일 때만 로드한다. astro build·CI·NODE_ENV 미설정은 전부 차단.
+ *   SITE_FIXTURES=0 은 개발 중에도 강제 OFF.
+ */
+const USE_FIXTURES =
+  process.env.SITE_FIXTURES === '1' ||
+  (process.env.SITE_FIXTURES !== '0' && process.env.NODE_ENV === 'development');
 
 export interface Anchor { url: string; fragment?: string; quote?: string }
 export interface AiContent {
