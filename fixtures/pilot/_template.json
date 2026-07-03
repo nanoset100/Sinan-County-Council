@@ -1,0 +1,12 @@
+[
+  {
+    "title": "(예시) 신안군 ○○ 지원 조례안",
+    "sourceText": "여기에 신안군의회 홈페이지(S2)의 해당 안건 '의안요지' 또는 '제안이유' 원문을 그대로 붙여넣으세요. Verifier 가 이 원문과 AI 요약을 대조합니다. 예: 이 조례는 …을 목적으로 한다. 지원 대상은 …이며, 시행일은 2026년 ○월 ○일로 한다.",
+    "sourceUrl": "https://council.shinan.go.kr/…"
+  },
+  {
+    "title": "(예시) 두 번째 안건 제목",
+    "sourceText": "두 번째 안건의 의안요지 원문…",
+    "sourceUrl": "https://council.shinan.go.kr/…"
+  }
+]

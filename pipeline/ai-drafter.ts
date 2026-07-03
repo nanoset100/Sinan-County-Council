@@ -1,4 +1,4 @@
-import type { AiContent } from './types.js';
+import type { AiContent, Anchor } from './types.js';
 
 /**
  * AI Drafter (PRD v0.4 §6-③, §7-B A1) — 안건 3단 요약 초안 생성.
@@ -69,26 +69,95 @@ export class MockAiDrafter implements AiDrafter {
   }
 }
 
+export interface TokenUsage { input_tokens: number; output_tokens: number }
+
+interface RawSummary {
+  summary_one_line?: unknown;
+  what_changes?: unknown;
+  who_affected?: unknown;
+}
+
 /**
- * Claude 기반 드래프터의 골격 (배치 2에서 구현).
- * @anthropic-ai/sdk 로 A1_SYSTEM_PROMPT 를 사용해 생성한다. 여기서는 미구현으로 명시한다.
+ * Claude 기반 A1 드래프터 (PRD §6-③, §7-B). @anthropic-ai/sdk 로 A1_SYSTEM_PROMPT 사용.
+ *
+ * - 원문(의안요지)만 근거로 3단 요약 JSON 생성. 파싱 실패는 생성 실패로 처리(throw).
+ * - 앵커 url 은 모델 출력 대신 실제 input.sourceUrl 로 강제(오염 방지). quote 는 모델 값 유지.
+ * - 출력은 verifier_passed=false·reviewed_by=null 상태 — 반드시 Verifier→사람 검수를 거친다.
+ * - lastUsage 로 토큰 사용량을 노출(파일럿 비용 실측용, §12-3).
  */
 export class ClaudeAiDrafter implements AiDrafter {
-  constructor(private readonly _apiKey: string, private readonly _model: string) {}
+  lastUsage: TokenUsage | null = null;
 
-  async draftAgendaSummary(_input: DraftInput): Promise<AiContent> {
-    throw new Error(
-      'ClaudeAiDrafter 는 배치 2에서 구현합니다(§12-3 파일럿 후 본 가동). ' +
-        '지금은 MockAiDrafter 를 사용하세요.',
-    );
+  constructor(private readonly apiKey: string, readonly model: string) {}
+
+  async draftAgendaSummary(input: DraftInput): Promise<AiContent> {
+    const { default: Anthropic } = await import('@anthropic-ai/sdk');
+    const client = new Anthropic({ apiKey: this.apiKey });
+
+    const msg = await client.messages.create({
+      model: this.model,
+      max_tokens: 1024,
+      system: A1_SYSTEM_PROMPT,
+      messages: [
+        {
+          role: 'user',
+          content:
+            `다음 안건의 원문만 근거로 A1 3단 요약 JSON 을 출력하세요. JSON 외 다른 텍스트는 쓰지 마세요.\n\n` +
+            `[제목] ${input.title}\n\n[원문(의안요지)]\n${input.sourceText}`,
+        },
+      ],
+    });
+
+    this.lastUsage = { input_tokens: msg.usage.input_tokens, output_tokens: msg.usage.output_tokens };
+
+    const text = msg.content
+      .filter((b): b is { type: 'text'; text: string } => b.type === 'text')
+      .map((b) => b.text)
+      .join('\n');
+
+    const parsed = parseSummaryJson(text);
+    return this.toAiContent(parsed, input.sourceUrl);
+  }
+
+  private toAiContent(raw: RawSummary, sourceUrl: string): AiContent {
+    const forceUrl = (a: Anchor | undefined): Anchor => ({
+      url: sourceUrl, // 앵커 url 은 항상 실제 원문 URL 로 강제
+      ...(a?.quote ? { quote: String(a.quote) } : {}),
+      ...(a?.fragment ? { fragment: String(a.fragment) } : {}),
+    });
+    const changes = Array.isArray(raw.what_changes)
+      ? raw.what_changes.map((c: any) => ({ text: String(c?.text ?? ''), anchor: forceUrl(c?.anchor) }))
+      : [];
+    const who = raw.who_affected as any;
+    return {
+      generated_at: new Date().toISOString().slice(0, 10),
+      model: this.model,
+      verifier_passed: false,
+      reviewed_by: null,
+      reviewed_at: null,
+      summary_one_line: String(raw.summary_one_line ?? ''),
+      what_changes: changes,
+      who_affected: who?.text ? { text: String(who.text), anchor: forceUrl(who.anchor) } : undefined,
+    };
   }
 }
 
-/** ANTHROPIC_API_KEY 유무로 드래프터 선택. 키 없으면 Mock. */
+/** 모델 출력에서 JSON 을 견고하게 추출. 실패 시 생성 실패(throw). */
+function parseSummaryJson(text: string): RawSummary {
+  let body = text.trim();
+  const fence = body.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) body = fence[1].trim();
+  const start = body.indexOf('{');
+  const end = body.lastIndexOf('}');
+  if (start === -1 || end === -1) throw new Error('AI 응답에서 JSON 을 찾지 못함(생성 실패)');
+  return JSON.parse(body.slice(start, end + 1)) as RawSummary;
+}
+
+/** ANTHROPIC_API_KEY 유무로 드래프터 선택. 키 없으면 Mock. 배치 요약은 비용을 위해 기본 sonnet. */
 export function selectDrafter(): AiDrafter {
   const key = process.env.ANTHROPIC_API_KEY;
   if (key) {
-    return new ClaudeAiDrafter(key, process.env.ANTHROPIC_MODEL ?? 'claude-opus-4-8');
+    return new ClaudeAiDrafter(key, process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-5');
   }
   return new MockAiDrafter();
 }

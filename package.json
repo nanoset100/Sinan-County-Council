@@ -13,6 +13,7 @@
     "validate": "tsx scripts/validate-data.ts",
     "validate:input": "tsx scripts/validate-input.ts",
     "pipeline": "tsx pipeline/run.ts",
+    "pilot": "tsx scripts/pilot-a1.ts",
     "g0": "tsx scripts/g0-smoke-test.ts"
   },
   "dependencies": {

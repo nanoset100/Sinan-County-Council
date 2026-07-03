@@ -17,6 +17,8 @@
 
 두 수집기는 `pipeline/collectors/Collector.ts` 인터페이스를 공유하므로, G0 통과 시 하류 코드 변경 없이 어댑터만 교체된다.
 
+**S1 API 실측 주의(2026-07):** `rasmblyId` 필터는 `searchType`이 비-ALL(bill.do=`BI_SJ`, minutes.do/assemblyinfo.do=`RASMBLY_NM`)이고 `searchKeyword`가 빈값일 때만 적용된다(ALL 이면 전국 반환). 또한 **`bill.do` 상세에는 의안요지(BI_OUTLINE) 본문이 없다** — 제목·메타·결과·파일명만 제공한다. 따라서 **A1 요약의 근거 원문(의안요지)은 S1이 아니라 신안군의회 홈페이지(S2)/첨부문서에서 확보**해야 한다. A1 품질 파일럿(`npm run pilot`)은 `--input=<의안요지 파일>`(fixtures/pilot/_template.json 참고)로 실제 원문을 공급한다.
+
 ## 명령
 
 | 명령 | 설명 |
