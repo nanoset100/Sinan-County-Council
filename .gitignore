@@ -24,3 +24,6 @@ snapshots/
 *.log
 .DS_Store
 Thumbs.db
+
+# 드롭한 원문 문서(대용량 바이너리) — 저장소에 넣지 않음. 내용은 fixtures/pilot 등으로 추출.
+*.pdf
