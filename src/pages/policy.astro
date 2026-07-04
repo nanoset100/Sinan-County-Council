@@ -39,7 +39,8 @@ import Layout from "../components/Layout.astro";
 
   <h2 id="correction">정정 요청 / AI 오류 신고</h2>
   <p>사실과 다른 내용이나 AI 요약 오류를 발견하시면 접수해 주세요. 7일 내 원문과 대조해 처리하고, 정정 이력을 공개합니다.</p>
-  <!-- 실제 전송 엔드포인트는 배포 시 Formspree 등으로 교체. 지금은 이메일 폴백. -->
+  <!-- 배포 시 실제 접수 채널로 교체: Formspree 등 전송 폼 또는 운영 주체의 대표(역할) 이메일.
+       개인 이메일을 하드코딩하지 말 것(공개 저장소·스팸 노출). -->
   <form action="mailto:CONTACT-ADDRESS@example.org" method="post" enctype="text/plain" class="stack card" style="max-width:36rem">
     <label>이름<br /><input name="name" required style="width:100%;padding:0.5rem" /></label>
     <label>연락처(선택)<br /><input name="contact" style="width:100%;padding:0.5rem" /></label>
@@ -47,5 +48,5 @@ import Layout from "../components/Layout.astro";
     <label>내용·근거<br /><textarea name="detail" required rows="4" style="width:100%;padding:0.5rem"></textarea></label>
     <button type="submit" class="badge" style="padding:0.6rem 1rem">정정 요청 보내기</button>
   </form>
-  <p class="muted">※ 배포 시 전송 폼으로 교체 예정. 급한 사안은 이메일로 직접 연락 주세요.</p>
+  <p class="muted">※ 접수 채널은 배포 시 운영 주체의 대표 연락처(전송 폼 또는 역할 이메일)로 설정됩니다.</p>
 </Layout>

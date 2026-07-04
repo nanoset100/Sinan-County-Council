@@ -1,6 +1,7 @@
 ---
 import type { AiContent } from "../lib/content";
 import { annotateGlossary } from "../lib/glossary";
+import { safeHref } from "../lib/url";
 interface Props { ai?: AiContent; sourceText: string; sourceUrl: string }
 const { ai, sourceText, sourceUrl } = Astro.props;
 
@@ -9,7 +10,7 @@ const publishable = !!ai && ai.verifier_passed && !!ai.reviewed_by;
 ---
 {publishable ? (
   <section class="ai-block" aria-label="AI 요약">
-    <div class="ai-label">🤖 AI 요약 · 운영자 검수 완료 · <a href={sourceUrl} target="_blank" rel="noopener noreferrer">원문 보기</a></div>
+    <div class="ai-label">🤖 AI 요약 · 운영자 검수 완료 · <a href={safeHref(sourceUrl)} target="_blank" rel="noopener noreferrer">원문 보기</a></div>
     <p style="margin:0 0 0.5rem;font-weight:600" set:html={annotateGlossary(ai!.summary_one_line)} />
 
     {ai!.what_changes && ai!.what_changes.length > 0 && (
