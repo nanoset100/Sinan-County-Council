@@ -13,6 +13,7 @@
     "photo_url": { "type": ["string", "null"], "format": "uri" },
     "district": { "type": ["string", "null"], "description": "선거구" },
     "party": { "type": ["string", "null"], "description": "정당" },
+    "role": { "type": ["string", "null"], "description": "의장·부의장·상임위원장 등 직위(공식 기록 확정분만)" },
     "term": { "type": "string", "description": "예: 제10대" },
     "committees": { "type": "array", "items": { "type": "string" } },
     "links": {

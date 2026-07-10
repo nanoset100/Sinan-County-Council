@@ -47,7 +47,8 @@ export interface Agenda extends Sampleable {
 }
 export interface Member extends Sampleable {
   id: string; name: string; photo_url?: string | null; district?: string | null;
-  party?: string | null; term: string; committees?: string[]; links?: string[]; _meta: Meta;
+  party?: string | null; role?: string | null; term: string;
+  committees?: string[]; links?: string[]; _meta: Meta;
 }
 export interface Meeting extends Sampleable {
   id: string; date: string; type: string; session?: string | null;

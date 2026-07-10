@@ -13,7 +13,10 @@ const proposed = getAgendas().filter((a) => (a.related_members ?? []).includes(m
 <Layout title={`${member.name} — 의원`}>
   <p class="muted"><a href="/members">← 의원 명부</a></p>
   <div class="row" style="justify-content:space-between">
-    <h1 style="margin-bottom:0.25rem">{member.name}</h1>
+    <span class="row" style="gap:0.5rem">
+      <h1 style="margin-bottom:0.25rem">{member.name}</h1>
+      {member.role && <span class="badge">{member.role}</span>}
+    </span>
     {member.isSample && <span class="badge">샘플</span>}
   </div>
   <div class="muted">{member.district ?? "선거구 미기재"} · {member.party ?? "정당 미기재"} · {member.term}</div>

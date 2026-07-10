@@ -2,14 +2,15 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_note": "의장 (제335회 개원 회의록 확정)",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url(게재 허락 있음, 개별 URL 미확인)", "district(선거구)", "party(정당)", "committees(소속 위원회)", "links(프로필 URL)"],
+    "_note": "직위·선거구·정당: 의회 홈페이지 의원광장>현역의원>인명별(2026-07-11 확인). role 근거: 제335회 개원 회의록 + 인명별 페이지.",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url(게재 허락 있음, 개별 URL 미확인)", "committees(의장의 상임위 소속 여부 미확인)", "links(누리집 바로가기 URL)"],
     "data": {
       "id": "member-0001",
       "name": "이상주",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "나 선거구(압해읍, 자은면, 암태면)",
+      "party": "더불어민주당",
+      "role": "의장",
       "term": "제10대",
       "committees": [],
       "links": []
@@ -18,14 +19,15 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_note": "부의장 (제335회 개원 회의록 확정)",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "_note": "직위·선거구·정당: 인명별 페이지(2026-07-11 확인). role 근거: 제335회 개원 회의록 + 인명별 페이지.",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(부의장의 상임위 소속 여부 미확인)", "links"],
     "data": {
       "id": "member-0002",
       "name": "최영진",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "가 선거구(지도읍, 증도면, 임자면)",
+      "party": "더불어민주당",
+      "role": "부의장",
       "term": "제10대",
       "committees": [],
       "links": []
@@ -34,44 +36,49 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "_note": "직위·선거구·정당: 인명별 페이지(2026-07-11 확인). 위원장직에서 의회운영위원회 소속 확정.",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(의회운영위 외 상임위 겸임 여부 미확인)", "links"],
     "data": {
       "id": "member-0003",
       "name": "문선웅",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "나 선거구(압해읍, 자은면, 암태면)",
+      "party": "더불어민주당",
+      "role": "의회운영위원장",
       "term": "제10대",
-      "committees": [],
+      "committees": ["의회운영위원회"],
       "links": []
     }
   },
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "_note": "직위·선거구·정당: 인명별 페이지(2026-07-11 확인). 위원장직에서 행정복지위원회 소속 확정.",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(행정복지위 외 겸임 여부 미확인)", "links"],
     "data": {
       "id": "member-0004",
       "name": "강대성",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "라 선거구(하의면, 신의면, 장산면, 안좌면, 팔금면)",
+      "party": "더불어민주당",
+      "role": "행정복지위원장",
       "term": "제10대",
-      "committees": [],
+      "committees": ["행정복지위원회"],
       "links": []
     }
   },
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_note": "산업건설위원장 (제335회 개원 회의록 확정). committees 는 위원장직에서 확정된 소속만 기재.",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "links"],
+    "_note": "직위·선거구·정당: 인명별 페이지(2026-07-11 확인) + 제335회 개원 회의록. 위원장직에서 산업건설위원회 소속 확정.",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(산업건설위 외 겸임 여부 미확인)", "links"],
     "data": {
       "id": "member-0005",
       "name": "권오연",
       "photo_url": null,
-      "district": "다선거구(비금면·도초면·흑산면)",
+      "district": "다 선거구(비금면, 도초면, 흑산면)",
       "party": "무소속",
+      "role": "산업건설위원장",
       "term": "제10대",
       "committees": ["산업건설위원회"],
       "links": []
@@ -80,13 +87,15 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "_note": "선거구·정당: 인명별 페이지(2026-07-11 확인). 직위 '의원'(평의원) → role 은 null(배지는 지도부만).",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(상임위 소속 미확인)", "links"],
     "data": {
       "id": "member-0006",
       "name": "김혁성",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "가 선거구(지도읍, 증도면, 임자면)",
+      "party": "더불어민주당",
+      "role": null,
       "term": "제10대",
       "committees": [],
       "links": []
@@ -95,13 +104,15 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "_note": "선거구·정당: 인명별 페이지(2026-07-11 확인).",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(상임위 소속 미확인)", "links"],
     "data": {
       "id": "member-0007",
       "name": "김용배",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "라 선거구(하의면, 신의면, 장산면, 안좌면, 팔금면)",
+      "party": "더불어민주당",
+      "role": null,
       "term": "제10대",
       "committees": [],
       "links": []
@@ -110,13 +121,15 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "committees", "links"],
+    "_note": "선거구·정당: 인명별 페이지(2026-07-11 확인).",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(상임위 소속 미확인)", "links"],
     "data": {
       "id": "member-0008",
       "name": "김학기",
       "photo_url": null,
-      "district": "다선거구(비금면·도초면·흑산면)",
+      "district": "다 선거구(비금면, 도초면, 흑산면)",
       "party": "더불어민주당",
+      "role": null,
       "term": "제10대",
       "committees": [],
       "links": []
@@ -125,13 +138,15 @@
   {
     "kind": "member",
     "sourceUrl": "https://council.shinan.go.kr",
-    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "_note": "선거구·정당: 인명별 페이지(2026-07-11 확인).",
+    "_todo": ["sourceUrl→인명별 정확 URL", "photo_url", "committees(상임위 소속 미확인)", "links"],
     "data": {
       "id": "member-0009",
       "name": "최성자",
       "photo_url": null,
-      "district": null,
-      "party": null,
+      "district": "비례대표",
+      "party": "더불어민주당",
+      "role": null,
       "term": "제10대",
       "committees": [],
       "links": []
