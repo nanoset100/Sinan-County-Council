@@ -21,6 +21,7 @@ const proposed = getAgendas().filter((a) => (a.related_members ?? []).includes(m
   </div>
   <div class="muted">{member.district ?? "선거구 미기재"} · {member.party ?? "정당 미기재"} · {member.term}</div>
   {member.committees && member.committees.length > 0 && <p>상임위: {member.committees.join(", ")}</p>}
+  {member.phone && <p>연락처: <a href={`tel:${member.phone}`}>{member.phone}</a> <span class="muted">(의회 홈페이지 공식 게시)</span></p>}
 
   <h2>관련 안건 <span class="muted" style="font-weight:400">(이 페이지 내 집계: {proposed.length}건)</span></h2>
   {proposed.length === 0 ? (

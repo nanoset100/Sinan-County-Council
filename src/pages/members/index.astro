@@ -18,6 +18,7 @@ const members = getMembers();
         </div>
         <div class="muted">{m.district ?? "선거구 미기재"} · {m.party ?? "정당 미기재"}</div>
         <div class="muted">{m.term}{m.committees && m.committees.length > 0 && ` · ${m.committees.join(", ")}`}</div>
+        {m.phone && <div class="muted">연락처 <a href={`tel:${m.phone}`}>{m.phone}</a></div>}
       </li>
     ))}
   </ul>
