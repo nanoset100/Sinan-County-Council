@@ -1,0 +1,140 @@
+[
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_note": "의장 (제335회 개원 회의록 확정)",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url(게재 허락 있음, 개별 URL 미확인)", "district(선거구)", "party(정당)", "committees(소속 위원회)", "links(프로필 URL)"],
+    "data": {
+      "id": "member-0001",
+      "name": "이상주",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_note": "부의장 (제335회 개원 회의록 확정)",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "data": {
+      "id": "member-0002",
+      "name": "최영진",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "data": {
+      "id": "member-0003",
+      "name": "문선웅",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "data": {
+      "id": "member-0004",
+      "name": "강대성",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_note": "산업건설위원장 (제335회 개원 회의록 확정). committees 는 위원장직에서 확정된 소속만 기재.",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "links"],
+    "data": {
+      "id": "member-0005",
+      "name": "권오연",
+      "photo_url": null,
+      "district": "다선거구(비금면·도초면·흑산면)",
+      "party": "무소속",
+      "term": "제10대",
+      "committees": ["산업건설위원회"],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "data": {
+      "id": "member-0006",
+      "name": "김혁성",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "data": {
+      "id": "member-0007",
+      "name": "김용배",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "committees", "links"],
+    "data": {
+      "id": "member-0008",
+      "name": "김학기",
+      "photo_url": null,
+      "district": "다선거구(비금면·도초면·흑산면)",
+      "party": "더불어민주당",
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  },
+  {
+    "kind": "member",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "_todo": ["sourceUrl→의원소개 정확 URL", "photo_url", "district", "party", "committees", "links"],
+    "data": {
+      "id": "member-0009",
+      "name": "최성자",
+      "photo_url": null,
+      "district": null,
+      "party": null,
+      "term": "제10대",
+      "committees": [],
+      "links": []
+    }
+  }
+]
