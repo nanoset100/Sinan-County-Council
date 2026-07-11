@@ -1,0 +1,23 @@
+{
+  "id": "member-0004",
+  "name": "강대성",
+  "photo_url": null,
+  "district": "라 선거구(하의면, 신의면, 장산면, 안좌면, 팔금면)",
+  "party": "더불어민주당",
+  "role": "행정복지위원장",
+  "phone": "010-9372-8796",
+  "term": "제10대",
+  "committees": [
+    "행정복지위원회"
+  ],
+  "links": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-11",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-11"
+  }
+}

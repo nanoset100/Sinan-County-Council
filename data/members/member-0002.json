@@ -1,0 +1,21 @@
+{
+  "id": "member-0002",
+  "name": "최영진",
+  "photo_url": null,
+  "district": "가 선거구(지도읍, 증도면, 임자면)",
+  "party": "더불어민주당",
+  "role": "부의장",
+  "phone": "010-3629-0304",
+  "term": "제10대",
+  "committees": [],
+  "links": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-11",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-11"
+  }
+}

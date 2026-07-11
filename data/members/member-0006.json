@@ -1,0 +1,21 @@
+{
+  "id": "member-0006",
+  "name": "김혁성",
+  "photo_url": null,
+  "district": "가 선거구(지도읍, 증도면, 임자면)",
+  "party": "더불어민주당",
+  "role": null,
+  "phone": "010-4326-0326",
+  "term": "제10대",
+  "committees": [],
+  "links": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-11",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-11"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "member-0003",
+  "name": "문선웅",
+  "photo_url": null,
+  "district": "나 선거구(압해읍, 자은면, 암태면)",
+  "party": "더불어민주당",
+  "role": "의회운영위원장",
+  "phone": "010-8617-1118",
+  "term": "제10대",
+  "committees": [
+    "의회운영위원회"
+  ],
+  "links": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-11",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-11"
+  }
+}

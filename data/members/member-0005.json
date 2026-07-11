@@ -1,0 +1,23 @@
+{
+  "id": "member-0005",
+  "name": "권오연",
+  "photo_url": null,
+  "district": "다 선거구(비금면, 도초면, 흑산면)",
+  "party": "무소속",
+  "role": "산업건설위원장",
+  "phone": "010-2525-5050",
+  "term": "제10대",
+  "committees": [
+    "산업건설위원회"
+  ],
+  "links": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-11",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-11"
+  }
+}
