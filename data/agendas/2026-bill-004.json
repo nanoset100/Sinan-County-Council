@@ -13,6 +13,10 @@
     {
       "stage": "보고 청취",
       "date": "2026-07-14"
+    },
+    {
+      "stage": "상임위 회부",
+      "date": "2026-07-14"
     }
   ],
   "votes": {
@@ -33,6 +37,6 @@
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }

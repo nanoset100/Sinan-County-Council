@@ -9,7 +9,13 @@
     "raw": "의장 제의"
   },
   "outline": "",
-  "timeline": [],
+  "timeline": [
+    {
+      "stage": "의결",
+      "date": null,
+      "result": "가결"
+    }
+  ],
   "votes": {
     "recorded": false,
     "records": []
@@ -26,6 +32,6 @@
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }

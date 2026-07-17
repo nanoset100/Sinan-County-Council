@@ -1,19 +1,18 @@
 {
-  "id": "2026-proc-004",
+  "id": "2026-bill-005",
   "clik_docid": null,
-  "title": "예산결산특별위원회 구성의 건",
+  "title": "농어촌 기본소득 지방정부협의회 설립 보고의 건",
   "bill_no": null,
-  "type": "기타(절차)",
+  "type": "보고",
   "proposer": {
-    "type": "의장",
-    "raw": "의장 제의"
+    "type": "집행부",
+    "raw": "미확인(집회보고상 상임위 회부 안건, 제출자 미확인)"
   },
   "outline": "",
   "timeline": [
     {
-      "stage": "의결",
-      "date": null,
-      "result": "가결(위원 8인 구성)"
+      "stage": "상임위 회부",
+      "date": "2026-07-14"
     }
   ],
   "votes": {
@@ -22,13 +21,15 @@
   },
   "related_members": [],
   "related_dept": null,
-  "related_meetings": [],
+  "related_meetings": [
+    "2026-plenary-002"
+  ],
   "region_tags": [],
   "files": [],
   "_meta": {
     "source_url": "https://council.shinan.go.kr",
     "source_system": "MANUAL",
-    "snapshot_path": null,
+    "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",

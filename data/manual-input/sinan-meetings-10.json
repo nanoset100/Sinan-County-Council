@@ -54,15 +54,15 @@
     "kind": "meeting",
     "sourceUrl": "https://council.shinan.go.kr",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 임시회 본회의 제1호. 추경(2026-bill-001)·기금운용계획(2026-bill-002)·군정 주요업무보고(2026-bill-004) 상정.",
-    "_todo": ["minutes_url→정확 URL", "회기결정·예결특위 구성·서명의원 선출 등 절차 안건의 이 회의 귀속 여부 회의록 대조"],
+    "_note": "제336회 임시회 본회의 제1호. 추경(2026-bill-001)·기금운용계획(2026-bill-002)·군정 주요업무보고(2026-bill-004) 상정. 집회보고에 농어촌 기본소득 지방정부협의회 설립 보고 등 4건 상임위 회부(2026-bill-005 부분 등록).",
+    "_todo": ["minutes_url→정확 URL", "상임위 회부 4건 중 나머지 3건 확인 후 agendas 보강", "회기결정·예결특위 구성·서명의원 선출 등 절차 안건의 이 회의 귀속 여부 회의록 대조"],
     "data": {
       "id": "2026-plenary-002",
       "clik_docid": null,
       "date": "2026-07-14",
       "type": "본회의",
       "session": "제336회",
-      "agendas": ["2026-bill-001", "2026-bill-002", "2026-bill-004"],
+      "agendas": ["2026-bill-001", "2026-bill-002", "2026-bill-004", "2026-bill-005"],
       "minutes_html": null,
       "minutes_url": "https://council.shinan.go.kr"
     }

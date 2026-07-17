@@ -4,8 +4,8 @@
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 본회의(2026-07-14) 제안설명 후 예산결산특별위원회 회부. 원문이 스캔 이미지라 outline 미확보 → A1 요약 미생성('AI 요약 미제공' 게시, §14-2).",
-    "_todo": ["bill_no(의안번호)", "outline(제안설명 원문 텍스트 확보 시)", "예결특위 회부 일자·심사 결과", "sourceUrl→의안 원문 URL"],
+    "_note": "제336회 본회의(2026-07-14) 제안설명 후 예산결산특별위원회 회부. 진행 일정(07-14 본회의·상임위·07-28 제2차 본회의)은 의회 홈페이지 의사일정 캘린더로 확증. ⚠️outline(제안설명 원문 요지: 5대 편성원칙·총규모·재정지표 수치)은 검토 세션이 판독한 원문 수치 미전달 → 공란 유지(추측 금지). outline 확보 시 A1 3단 요약 생성 예정.",
+    "_todo": ["outline: 제안설명 원문 요지(총규모·재정지표 수치) — 검토 세션 판독분 전달 필요", "related_members: 예산결산특별위원회 8인 명단 미전달(추측 금지)", "bill_no(의안번호)", "예결특위 심사 결과·제2차 본회의 처리 결과"],
     "data": {
       "id": "2026-bill-001",
       "clik_docid": null,
@@ -16,7 +16,9 @@
       "outline": "",
       "timeline": [
         { "stage": "제안설명", "date": "2026-07-14" },
-        { "stage": "예산결산특별위원회 회부", "date": null }
+        { "stage": "상임위 예비심사·예산결산특별위원회 회부", "date": "2026-07-14" },
+        { "stage": "예산결산특별위원회 심사(예정)", "date": null },
+        { "stage": "제2차 본회의 보고(예정)", "date": "2026-07-28" }
       ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
@@ -31,8 +33,8 @@
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 본회의(2026-07-14) 상정.",
-    "_todo": ["bill_no", "outline(원문 텍스트)", "심사·의결 결과", "sourceUrl→의안 원문 URL"],
+    "_note": "제336회 본회의(2026-07-14) 상정. 추경(2026-bill-001)과 함께 처리 — 동일 진행 경로(예결특위 회부→심사→제2차 본회의).",
+    "_todo": ["outline(원문 요지) 미전달", "related_members: 예산결산특별위원회 8인 명단 미전달(추측 금지)", "bill_no", "심사·처리 결과"],
     "data": {
       "id": "2026-bill-002",
       "clik_docid": null,
@@ -42,7 +44,10 @@
       "proposer": { "type": "집행부", "raw": "신안군수" },
       "outline": "",
       "timeline": [
-        { "stage": "제안", "date": "2026-07-14" }
+        { "stage": "제안설명", "date": "2026-07-14" },
+        { "stage": "예산결산특별위원회 회부", "date": "2026-07-14" },
+        { "stage": "예산결산특별위원회 심사(예정)", "date": null },
+        { "stage": "제2차 본회의 보고(예정)", "date": "2026-07-28" }
       ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
@@ -55,20 +60,21 @@
   {
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
-    "sourceText": "",
+    "sourceText": "「주민조례발안에 관한 법률」 제12조·「신안군의회 회의규칙」 제72조의3에 따라 주민조례청구 수리/각하 여부를 심의. 청구 접수일: 2026-01-09. 유효 서명 요건 1,921명 대비 제출 2,141명 중 유효 695명·무효 1,446명, 10일 보정기간 후 보정 미제출로 요건 불충족 각하.",
     "snapshotPath": "snapshots/신안군의회 회의록20260708_.pdf",
-    "_note": "제335회(폐회중) 의회운영위원회(2026-07-08) 상정, 의장 제의. ⚠️개인정보: 회의록 본문에 청구인 개인 실명 포함 여부 미확인(스캔 미판독) — 포함 시 게시 여부 운영자 판단 필요(의원=공개 직무정보, 청구인 개인은 별도).",
-    "_todo": ["각하 여부 등 심의 결과(회의록 본문 확인 전 기재 금지)", "청구 대상 조례명", "청구인 실명 포함 여부 확인(개인정보 게이트)", "sourceUrl→원문 URL"],
+    "_note": "제335회(폐회중) 의회운영위원회(2026-07-08) 심의, 의장 제의. 검토 세션 판독 완료 — 청구인 개인 실명 없음(회의규칙·법령·서명 통계만), 본문 전사·게시 가능. 위원 발언은 §14-1 중립 서술 유지. outline 확보 → A1 요약 생성 대상.",
+    "_todo": ["bill_no(의안번호)", "sourceUrl→의안 원문 URL"],
     "data": {
       "id": "2026-bill-003",
       "clik_docid": null,
-      "title": "주민조례청구 각하 심의안",
+      "title": "주민조례청구 각하 심의안 (「민간 발전소, 송·변전 설비 운영 및 건설에 관한 조례」 제정 청구)",
       "bill_no": null,
-      "type": "청원",
+      "type": "조례",
       "proposer": { "type": "의장", "raw": "의장 제의" },
-      "outline": "",
+      "outline": "「주민조례발안에 관한 법률」 제12조·「신안군의회 회의규칙」 제72조의3에 따라 주민조례청구 수리/각하 여부를 심의. 청구 접수일: 2026-01-09. 유효 서명 요건 1,921명 대비 제출 2,141명 중 유효 695명·무효 1,446명, 10일 보정기간 후 보정 미제출로 요건 불충족 각하.",
       "timeline": [
-        { "stage": "상정", "date": "2026-07-08" }
+        { "stage": "상정", "date": "2026-07-08" },
+        { "stage": "의결", "date": "2026-07-08", "result": "원안가결(각하)" }
       ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
@@ -83,8 +89,8 @@
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 본회의(2026-07-14) 군정 주요업무보고 청취.",
-    "_todo": ["보고 부서 범위", "sourceUrl→원문 URL"],
+    "_note": "제336회 본회의(2026-07-14) 군정 주요업무보고 청취 후 상임위 회부.",
+    "_todo": ["보고 부서 범위·소관 상임위", "sourceUrl→원문 URL"],
     "data": {
       "id": "2026-bill-004",
       "clik_docid": null,
@@ -94,7 +100,8 @@
       "proposer": { "type": "집행부", "raw": "신안군수" },
       "outline": "",
       "timeline": [
-        { "stage": "보고 청취", "date": "2026-07-14" }
+        { "stage": "보고 청취", "date": "2026-07-14" },
+        { "stage": "상임위 회부", "date": "2026-07-14" }
       ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
@@ -108,8 +115,34 @@
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
-    "_note": "절차 안건(전수 원칙, 최소 필드).",
-    "_todo": ["소집 회의·일자(회의록 대조 — 07-02 개원식은 '안건 없음'으로 기록돼 귀속 미상)", "의결 결과"],
+    "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
+    "_note": "07-14 제336회 본회의 집회보고에 '「농어촌 기본소득 지방정부협의회 설립 보고의 건」 등 4건 상임위 회부' 명시. 그 중 확인된 1건. 나머지 3건 제목·의안번호는 회의록 스캔 뷰어에만 있어 웹 조회로 미확인.",
+    "_todo": ["함께 회부된 나머지 3건 제목·의안번호(의회 의안정보/회의록 후속 페이지 확인)", "본 건 의안번호·제출자·소관 상임위·회부 결과", "outline"],
+    "data": {
+      "id": "2026-bill-005",
+      "clik_docid": null,
+      "title": "농어촌 기본소득 지방정부협의회 설립 보고의 건",
+      "bill_no": null,
+      "type": "보고",
+      "proposer": { "type": "집행부", "raw": "미확인(집회보고상 상임위 회부 안건, 제출자 미확인)" },
+      "outline": "",
+      "timeline": [
+        { "stage": "상임위 회부", "date": "2026-07-14" }
+      ],
+      "votes": { "recorded": false, "records": [] },
+      "related_members": [],
+      "related_dept": null,
+      "related_meetings": ["2026-plenary-002"],
+      "region_tags": [],
+      "files": []
+    }
+  },
+  {
+    "kind": "agenda",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "sourceText": "",
+    "_note": "절차 안건(전수 원칙, 최소 필드). 검토 세션 판독: 가결.",
+    "_todo": ["소집 회의·일자(회의록 대조 — 07-02 개원식은 '안건 없음'으로 기록돼 귀속 미상)"],
     "data": {
       "id": "2026-proc-001",
       "clik_docid": null,
@@ -118,7 +151,9 @@
       "type": "기타(절차)",
       "proposer": { "type": "의장", "raw": "의장 제의" },
       "outline": "",
-      "timeline": [],
+      "timeline": [
+        { "stage": "의결", "date": null, "result": "가결" }
+      ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
       "related_dept": null,
@@ -131,8 +166,8 @@
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
-    "_note": "절차 안건(전수 원칙, 최소 필드).",
-    "_todo": ["소집 회의·일자(제336회 본회의로 추정되나 회의록 대조 전 기재 금지)", "의결 결과"],
+    "_note": "절차 안건(전수 원칙, 최소 필드). 검토 세션 판독: 가결.",
+    "_todo": ["소집 회의·일자(제336회 제1차 본회의로 추정되나 회의록 대조 전 date 미기재)"],
     "data": {
       "id": "2026-proc-002",
       "clik_docid": null,
@@ -141,7 +176,9 @@
       "type": "기타(절차)",
       "proposer": { "type": "의장", "raw": "의장 제의" },
       "outline": "",
-      "timeline": [],
+      "timeline": [
+        { "stage": "의결", "date": null, "result": "가결" }
+      ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
       "related_dept": null,
@@ -154,8 +191,8 @@
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
-    "_note": "절차 안건(전수 원칙, 최소 필드).",
-    "_todo": ["소집 회의·일자(운영위 회의록 대조)", "선임 결과(피선임 의원)"],
+    "_note": "절차 안건(전수 원칙, 최소 필드). 선임 결과 미판독 — 후속 확인 대기.",
+    "_todo": ["소집 회의·일자(운영위 회의록 대조)", "선임 결과(피선임 의원) — 미판독"],
     "data": {
       "id": "2026-proc-003",
       "clik_docid": null,
@@ -177,8 +214,8 @@
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
-    "_note": "절차 안건(전수 원칙, 최소 필드). 추경(2026-bill-001) 심사를 위한 특위.",
-    "_todo": ["소집 회의·일자(회의록 대조)", "위원 구성 명단"],
+    "_note": "절차 안건(전수 원칙, 최소 필드). 추경(2026-bill-001)·기금(2026-bill-002) 심사를 위한 특위. 검토 세션 판독: 8인으로 구성 가결. 단, 8인 명단 미전달 → related_members 공란(추측 금지).",
+    "_todo": ["예산결산특별위원회 위원 8인 명단 — 미전달", "소집 회의·일자"],
     "data": {
       "id": "2026-proc-004",
       "clik_docid": null,
@@ -187,7 +224,9 @@
       "type": "기타(절차)",
       "proposer": { "type": "의장", "raw": "의장 제의" },
       "outline": "",
-      "timeline": [],
+      "timeline": [
+        { "stage": "의결", "date": null, "result": "가결(위원 8인 구성)" }
+      ],
       "votes": { "recorded": false, "records": [] },
       "related_members": [],
       "related_dept": null,
@@ -200,8 +239,8 @@
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
-    "_note": "절차 안건(전수 원칙, 최소 필드).",
-    "_todo": ["소집 회의·일자(회의록 대조)", "선출 의원"],
+    "_note": "절차 안건(전수 원칙). 검토 세션 판독: 서명의원으로 김용배(member-0007)·김학기(member-0008) 선출·가결.",
+    "_todo": ["소집 회의·일자(회의록 대조)"],
     "data": {
       "id": "2026-proc-005",
       "clik_docid": null,
@@ -210,9 +249,11 @@
       "type": "기타(절차)",
       "proposer": { "type": "의장", "raw": "의장 제의" },
       "outline": "",
-      "timeline": [],
+      "timeline": [
+        { "stage": "의결", "date": null, "result": "가결(서명의원 김용배·김학기 선출)" }
+      ],
       "votes": { "recorded": false, "records": [] },
-      "related_members": [],
+      "related_members": ["member-0007", "member-0008"],
       "related_dept": null,
       "related_meetings": [],
       "region_tags": [],

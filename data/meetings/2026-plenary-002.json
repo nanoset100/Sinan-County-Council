@@ -7,7 +7,8 @@
   "agendas": [
     "2026-bill-001",
     "2026-bill-002",
-    "2026-bill-004"
+    "2026-bill-004",
+    "2026-bill-005"
   ],
   "minutes_html": null,
   "minutes_url": "https://council.shinan.go.kr",
@@ -18,6 +19,6 @@
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }

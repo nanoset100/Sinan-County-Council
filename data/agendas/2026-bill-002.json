@@ -11,8 +11,20 @@
   "outline": "",
   "timeline": [
     {
-      "stage": "제안",
+      "stage": "제안설명",
       "date": "2026-07-14"
+    },
+    {
+      "stage": "예산결산특별위원회 회부",
+      "date": "2026-07-14"
+    },
+    {
+      "stage": "예산결산특별위원회 심사(예정)",
+      "date": null
+    },
+    {
+      "stage": "제2차 본회의 보고(예정)",
+      "date": "2026-07-28"
     }
   ],
   "votes": {
@@ -33,6 +45,6 @@
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }

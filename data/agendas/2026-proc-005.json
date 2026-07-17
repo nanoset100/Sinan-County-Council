@@ -9,12 +9,21 @@
     "raw": "의장 제의"
   },
   "outline": "",
-  "timeline": [],
+  "timeline": [
+    {
+      "stage": "의결",
+      "date": null,
+      "result": "가결(서명의원 김용배·김학기 선출)"
+    }
+  ],
   "votes": {
     "recorded": false,
     "records": []
   },
-  "related_members": [],
+  "related_members": [
+    "member-0007",
+    "member-0008"
+  ],
   "related_dept": null,
   "related_meetings": [],
   "region_tags": [],
@@ -26,6 +35,6 @@
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }
