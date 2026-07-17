@@ -5,13 +5,17 @@
   "type": "본회의",
   "session": "제336회",
   "agendas": [
+    "2026-proc-002",
+    "2026-bill-004",
     "2026-bill-001",
     "2026-bill-002",
-    "2026-bill-004",
+    "2026-proc-004",
+    "2026-proc-005",
+    "2026-proc-006",
     "2026-bill-005"
   ],
   "minutes_html": null,
-  "minutes_url": "https://council.shinan.go.kr",
+  "minutes_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
   "_meta": {
     "source_url": "https://council.shinan.go.kr",
     "source_system": "MANUAL",

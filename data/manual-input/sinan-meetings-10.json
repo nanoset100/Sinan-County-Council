@@ -37,15 +37,15 @@
     "kind": "meeting",
     "sourceUrl": "https://council.shinan.go.kr",
     "snapshotPath": "snapshots/신안군의회 회의록20260709_.pdf",
-    "_note": "의회운영위원회 제2호(제335회 폐회중).",
-    "_todo": ["minutes_url→정확 URL", "의사일정 항목 회의록 대조(미확인 → agendas 빈 배열)"],
+    "_note": "의회운영위원회 제2호(제335회 폐회중), 위원장 문선웅, 2026-07-09 14:30 개의. 의사일정 2건: ①부위원장 선임(김학기, 2026-proc-003) ②제336회 임시회 의사일정 협의(2026-proc-007). 07-09 회의록 원문 대조 완료.",
+    "_todo": ["minutes_url→07-09 회의록 뷰어 정확 URL"],
     "data": {
       "id": "2026-steering-002",
       "clik_docid": null,
       "date": "2026-07-09",
       "type": "의회운영위원회",
       "session": "제335회(폐회중)",
-      "agendas": [],
+      "agendas": ["2026-proc-003", "2026-proc-007"],
       "minutes_html": null,
       "minutes_url": "https://council.shinan.go.kr"
     }
@@ -54,17 +54,17 @@
     "kind": "meeting",
     "sourceUrl": "https://council.shinan.go.kr",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 임시회 본회의 제1호. 추경(2026-bill-001)·기금운용계획(2026-bill-002)·군정 주요업무보고(2026-bill-004) 상정. 집회보고에 농어촌 기본소득 지방정부협의회 설립 보고 등 4건 상임위 회부(2026-bill-005 부분 등록).",
-    "_todo": ["minutes_url→정확 URL", "상임위 회부 4건 중 나머지 3건 확인 후 agendas 보강", "회기결정·예결특위 구성·서명의원 선출 등 절차 안건의 이 회의 귀속 여부 회의록 대조"],
+    "_note": "제336회 임시회 본회의 제1호(2026-07-14 10:02 개의). 07-14 회의록 원문 대조 완료. 의사일정 6항: 회기결정(proc-002)·군정 주요업무보고 청취(bill-004)·추경/기금 제안설명(bill-001/002)·예결특위 구성(proc-004)·서명의원 선출(proc-005)·휴회(proc-006). 집회보고에 신안군수 제출 4건(농어촌 기본소득 지방정부협의회 설립 보고 등) 상임위 회부(bill-005 부분 등록). 전 안건 재석 9·찬성 9 기재.",
+    "_todo": ["상임위 회부 4건 중 나머지 3건 확인 후 agendas 보강"],
     "data": {
       "id": "2026-plenary-002",
       "clik_docid": null,
       "date": "2026-07-14",
       "type": "본회의",
       "session": "제336회",
-      "agendas": ["2026-bill-001", "2026-bill-002", "2026-bill-004", "2026-bill-005"],
+      "agendas": ["2026-proc-002", "2026-bill-004", "2026-bill-001", "2026-bill-002", "2026-proc-004", "2026-proc-005", "2026-proc-006", "2026-bill-005"],
       "minutes_html": null,
-      "minutes_url": "https://council.shinan.go.kr"
+      "minutes_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09"
     }
   }
 ]

@@ -1,18 +1,19 @@
 {
   "id": "2026-bill-004",
   "clik_docid": null,
-  "title": "2026년도 군정 주요업무보고 청취",
+  "title": "2026년도 군정 주요업무보고 청취의 건",
   "bill_no": null,
   "type": "보고",
   "proposer": {
-    "type": "집행부",
-    "raw": "신안군수"
+    "type": "의장",
+    "raw": "의장 제의"
   },
   "outline": "",
   "timeline": [
     {
-      "stage": "보고 청취",
-      "date": "2026-07-14"
+      "stage": "상정·의결",
+      "date": "2026-07-14",
+      "result": "가결(소관 상임위 회부)"
     },
     {
       "stage": "상임위 회부",
@@ -31,7 +32,7 @@
   "region_tags": [],
   "files": [],
   "_meta": {
-    "source_url": "https://council.shinan.go.kr",
+    "source_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
     "source_system": "MANUAL",
     "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
     "source_alive": true,

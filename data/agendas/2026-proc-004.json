@@ -12,7 +12,7 @@
   "timeline": [
     {
       "stage": "의결",
-      "date": null,
+      "date": "2026-07-14",
       "result": "가결(위원 8인 구성)"
     }
   ],
@@ -31,13 +31,15 @@
     "member-0009"
   ],
   "related_dept": null,
-  "related_meetings": [],
+  "related_meetings": [
+    "2026-plenary-002"
+  ],
   "region_tags": [],
   "files": [],
   "_meta": {
-    "source_url": "https://council.shinan.go.kr",
+    "source_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
     "source_system": "MANUAL",
-    "snapshot_path": null,
+    "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",

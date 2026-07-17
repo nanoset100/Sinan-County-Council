@@ -6,7 +6,7 @@
   "type": "보고",
   "proposer": {
     "type": "집행부",
-    "raw": "미확인(집회보고상 상임위 회부 안건, 제출자 미확인)"
+    "raw": "신안군수"
   },
   "outline": "",
   "timeline": [
@@ -27,7 +27,7 @@
   "region_tags": [],
   "files": [],
   "_meta": {
-    "source_url": "https://council.shinan.go.kr",
+    "source_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
     "source_system": "MANUAL",
     "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
     "source_alive": true,

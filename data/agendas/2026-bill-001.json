@@ -8,7 +8,7 @@
     "type": "집행부",
     "raw": "신안군수"
   },
-  "outline": "",
+  "outline": "신안군수가 제출한 2026년도 제1회 추가경정예산안. 총규모는 1조 210억 원으로, 일반회계 9445억 9000만 원과 특별회계 764억 원으로 편성함. 편성 5대 원칙은 다음과 같음. 첫째 농어촌 르네상스 실현으로 공익형 직불제 262억 원과 농어민 공익수당 50억 원을 확대함. 둘째 육·해상 교통 혁신으로 여객선 운임 지원에 39억 원을 투입함. 셋째 해피100 의료복지 실현으로 노인일자리 30억 원 등 보건·복지 사업을 확대함. 넷째 고품격 체류형 관광 육성으로 전남형 지역성장 전략사업 등에 15억 원을 투입함. 다섯째 신재생에너지를 미래 성장동력으로 육성하기 위해 발전소 주변지역 지원사업에 12억 원을 투입함. 일반회계 세입은 지방세 372억 9000만 원, 세외수입 457억 8000만 원, 지방교부세 4026억 1000만 원, 보조금 4019억 8000만 원 등으로 계상함. 특별회계 764억 원은 의료급여기금, 여객운송사업, 발전소주변지역지원사업, 정원관리, 상하수도사업으로 구성함. 기금운용계획 등 세부 사항은 배부 자료로 갈음함.",
   "timeline": [
     {
       "stage": "제안설명",
@@ -20,7 +20,7 @@
     },
     {
       "stage": "예산결산특별위원회 심사(예정)",
-      "date": null
+      "date": "2026-07-27"
     },
     {
       "stage": "제2차 본회의 보고(예정)",
@@ -41,14 +41,14 @@
     "member-0008",
     "member-0009"
   ],
-  "related_dept": null,
+  "related_dept": "기획예산과",
   "related_meetings": [
     "2026-plenary-002"
   ],
   "region_tags": [],
   "files": [],
   "_meta": {
-    "source_url": "https://council.shinan.go.kr",
+    "source_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
     "source_system": "MANUAL",
     "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
     "source_alive": true,

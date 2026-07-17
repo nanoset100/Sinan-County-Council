@@ -4,7 +4,10 @@
   "date": "2026-07-09",
   "type": "의회운영위원회",
   "session": "제335회(폐회중)",
-  "agendas": [],
+  "agendas": [
+    "2026-proc-003",
+    "2026-proc-007"
+  ],
   "minutes_html": null,
   "minutes_url": "https://council.shinan.go.kr",
   "_meta": {
@@ -14,6 +17,6 @@
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }

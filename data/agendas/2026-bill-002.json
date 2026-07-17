@@ -20,7 +20,7 @@
     },
     {
       "stage": "예산결산특별위원회 심사(예정)",
-      "date": null
+      "date": "2026-07-27"
     },
     {
       "stage": "제2차 본회의 보고(예정)",
@@ -41,14 +41,14 @@
     "member-0008",
     "member-0009"
   ],
-  "related_dept": null,
+  "related_dept": "기획예산과",
   "related_meetings": [
     "2026-plenary-002"
   ],
   "region_tags": [],
   "files": [],
   "_meta": {
-    "source_url": "https://council.shinan.go.kr",
+    "source_url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
     "source_system": "MANUAL",
     "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
     "source_alive": true,

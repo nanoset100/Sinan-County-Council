@@ -5,27 +5,37 @@
   "bill_no": null,
   "type": "기타(절차)",
   "proposer": {
-    "type": "의장",
-    "raw": "의장 제의"
+    "type": "위원장",
+    "raw": "의회운영위원장"
   },
   "outline": "",
-  "timeline": [],
+  "timeline": [
+    {
+      "stage": "의결",
+      "date": "2026-07-09",
+      "result": "가결(부위원장 김학기 선임)"
+    }
+  ],
   "votes": {
     "recorded": false,
     "records": []
   },
-  "related_members": [],
+  "related_members": [
+    "member-0008"
+  ],
   "related_dept": null,
-  "related_meetings": [],
+  "related_meetings": [
+    "2026-steering-002"
+  ],
   "region_tags": [],
   "files": [],
   "_meta": {
     "source_url": "https://council.shinan.go.kr",
     "source_system": "MANUAL",
-    "snapshot_path": null,
+    "snapshot_path": "snapshots/신안군의회 회의록20260709_.pdf",
     "source_alive": true,
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
-    "reviewed_at": "2026-07-17"
+    "reviewed_at": "2026-07-18"
   }
 }
