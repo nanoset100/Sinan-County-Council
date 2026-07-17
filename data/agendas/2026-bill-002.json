@@ -31,7 +31,16 @@
     "recorded": false,
     "records": []
   },
-  "related_members": [],
+  "related_members": [
+    "member-0002",
+    "member-0003",
+    "member-0004",
+    "member-0005",
+    "member-0006",
+    "member-0007",
+    "member-0008",
+    "member-0009"
+  ],
   "related_dept": null,
   "related_meetings": [
     "2026-plenary-002"

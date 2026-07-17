@@ -4,8 +4,8 @@
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 본회의(2026-07-14) 제안설명 후 예산결산특별위원회 회부. 진행 일정(07-14 본회의·상임위·07-28 제2차 본회의)은 의회 홈페이지 의사일정 캘린더로 확증. ⚠️outline(제안설명 원문 요지: 5대 편성원칙·총규모·재정지표 수치)은 검토 세션이 판독한 원문 수치 미전달 → 공란 유지(추측 금지). outline 확보 시 A1 3단 요약 생성 예정.",
-    "_todo": ["outline: 제안설명 원문 요지(총규모·재정지표 수치) — 검토 세션 판독분 전달 필요", "related_members: 예산결산특별위원회 8인 명단 미전달(추측 금지)", "bill_no(의안번호)", "예결특위 심사 결과·제2차 본회의 처리 결과"],
+    "_note": "제336회 본회의(2026-07-14) 제안설명 후 예산결산특별위원회 회부. 진행 일정(07-14 본회의·상임위·07-28 제2차 본회의)은 의회 홈페이지 의사일정 캘린더로 확증. 예결특위 = 의장 이상주(member-0001) 제외 전원 8인(검토 세션 07-14 회의록 판독). ⚠️outline(제안설명 원문 요지)은 원문 그대로가 필요 — 검토 세션 압축노트(총규모·재정자립 6.8%·5대 편성원칙)만 있고 verbatim 미전달 → 공란 유지(추측·오표기 금지). outline 확보 시 A1 3단 요약 생성 예정.",
+    "_todo": ["outline: 제안설명 원문 요지 verbatim 텍스트 — 검토 세션 판독분 전달 필요(현재 압축노트만)", "bill_no(의안번호)", "예결특위 심사 결과·제2차 본회의 처리 결과"],
     "data": {
       "id": "2026-bill-001",
       "clik_docid": null,
@@ -21,7 +21,7 @@
         { "stage": "제2차 본회의 보고(예정)", "date": "2026-07-28" }
       ],
       "votes": { "recorded": false, "records": [] },
-      "related_members": [],
+      "related_members": ["member-0002", "member-0003", "member-0004", "member-0005", "member-0006", "member-0007", "member-0008", "member-0009"],
       "related_dept": null,
       "related_meetings": ["2026-plenary-002"],
       "region_tags": [],
@@ -33,8 +33,8 @@
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
     "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
-    "_note": "제336회 본회의(2026-07-14) 상정. 추경(2026-bill-001)과 함께 처리 — 동일 진행 경로(예결특위 회부→심사→제2차 본회의).",
-    "_todo": ["outline(원문 요지) 미전달", "related_members: 예산결산특별위원회 8인 명단 미전달(추측 금지)", "bill_no", "심사·처리 결과"],
+    "_note": "제336회 본회의(2026-07-14) 상정. 추경(2026-bill-001)과 함께 처리 — 동일 진행 경로(예결특위 회부→심사→제2차 본회의). 예결특위 = 의장 이상주 제외 전원 8인(검토 세션 판독).",
+    "_todo": ["outline(원문 요지) verbatim 미전달", "bill_no", "심사·처리 결과"],
     "data": {
       "id": "2026-bill-002",
       "clik_docid": null,
@@ -50,7 +50,7 @@
         { "stage": "제2차 본회의 보고(예정)", "date": "2026-07-28" }
       ],
       "votes": { "recorded": false, "records": [] },
-      "related_members": [],
+      "related_members": ["member-0002", "member-0003", "member-0004", "member-0005", "member-0006", "member-0007", "member-0008", "member-0009"],
       "related_dept": null,
       "related_meetings": ["2026-plenary-002"],
       "region_tags": [],
@@ -214,8 +214,8 @@
     "kind": "agenda",
     "sourceUrl": "https://council.shinan.go.kr",
     "sourceText": "",
-    "_note": "절차 안건(전수 원칙, 최소 필드). 추경(2026-bill-001)·기금(2026-bill-002) 심사를 위한 특위. 검토 세션 판독: 8인으로 구성 가결. 단, 8인 명단 미전달 → related_members 공란(추측 금지).",
-    "_todo": ["예산결산특별위원회 위원 8인 명단 — 미전달", "소집 회의·일자"],
+    "_note": "절차 안건(전수 원칙). 추경(2026-bill-001)·기금(2026-bill-002) 심사를 위한 특위. 검토 세션 판독: 위원 8인 = 의장 이상주(member-0001) 제외 전원, 구성 가결.",
+    "_todo": ["소집 회의·일자", "위원장·간사 등 특위 내 직위(확인 시 보강)"],
     "data": {
       "id": "2026-proc-004",
       "clik_docid": null,
@@ -228,7 +228,7 @@
         { "stage": "의결", "date": null, "result": "가결(위원 8인 구성)" }
       ],
       "votes": { "recorded": false, "records": [] },
-      "related_members": [],
+      "related_members": ["member-0002", "member-0003", "member-0004", "member-0005", "member-0006", "member-0007", "member-0008", "member-0009"],
       "related_dept": null,
       "related_meetings": [],
       "region_tags": [],
