@@ -1,0 +1,38 @@
+{
+  "id": "2026-bill-002",
+  "clik_docid": null,
+  "title": "신안군 기금운용계획안",
+  "bill_no": null,
+  "type": "기금",
+  "proposer": {
+    "type": "집행부",
+    "raw": "신안군수"
+  },
+  "outline": "",
+  "timeline": [
+    {
+      "stage": "제안",
+      "date": "2026-07-14"
+    }
+  ],
+  "votes": {
+    "recorded": false,
+    "records": []
+  },
+  "related_members": [],
+  "related_dept": null,
+  "related_meetings": [
+    "2026-plenary-002"
+  ],
+  "region_tags": [],
+  "files": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
+    "source_alive": true,
+    "collected_at": "2026-07-17",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-17"
+  }
+}

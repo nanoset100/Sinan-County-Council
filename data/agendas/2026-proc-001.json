@@ -1,0 +1,31 @@
+{
+  "id": "2026-proc-001",
+  "clik_docid": null,
+  "title": "회기 결정의 건(제335회)",
+  "bill_no": null,
+  "type": "기타(절차)",
+  "proposer": {
+    "type": "의장",
+    "raw": "의장 제의"
+  },
+  "outline": "",
+  "timeline": [],
+  "votes": {
+    "recorded": false,
+    "records": []
+  },
+  "related_members": [],
+  "related_dept": null,
+  "related_meetings": [],
+  "region_tags": [],
+  "files": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": null,
+    "source_alive": true,
+    "collected_at": "2026-07-17",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-17"
+  }
+}

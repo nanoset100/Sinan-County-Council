@@ -17,7 +17,7 @@
       "additionalProperties": false,
       "required": ["type", "raw"],
       "properties": {
-        "type": { "type": "string", "enum": ["집행부", "의원", "위원장"] },
+        "type": { "type": "string", "enum": ["집행부", "의원", "위원장", "의장"] },
         "raw": { "type": "string", "description": "PROPSR 원문" }
       }
     },

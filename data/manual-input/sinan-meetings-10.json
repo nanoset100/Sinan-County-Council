@@ -1,0 +1,70 @@
+[
+  {
+    "kind": "meeting",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "snapshotPath": "snapshots/신안군의회 회의록20260702_.pdf",
+    "_note": "제10대 개원식(의례, 안건 없음). 원문: 스캔 이미지 PDF(텍스트 레이어 없음) → minutes_html null, 스냅샷은 내부 검수용(gitignore).",
+    "_todo": ["minutes_url→홈페이지 회의록 원문 정확 URL"],
+    "data": {
+      "id": "2026-plenary-001",
+      "clik_docid": null,
+      "date": "2026-07-02",
+      "type": "본회의",
+      "session": "제335회",
+      "agendas": [],
+      "minutes_html": null,
+      "minutes_url": "https://council.shinan.go.kr"
+    }
+  },
+  {
+    "kind": "meeting",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "snapshotPath": "snapshots/신안군의회 회의록20260708_.pdf",
+    "_note": "의회운영위원회 제1호(제335회 폐회중, 위원장 문선웅). 주민조례청구 각하 심의(2026-bill-003) 상정.",
+    "_todo": ["minutes_url→정확 URL", "의사일정 전체 항목(부위원장 선임 등) 회의록 대조"],
+    "data": {
+      "id": "2026-steering-001",
+      "clik_docid": null,
+      "date": "2026-07-08",
+      "type": "의회운영위원회",
+      "session": "제335회(폐회중)",
+      "agendas": ["2026-bill-003"],
+      "minutes_html": null,
+      "minutes_url": "https://council.shinan.go.kr"
+    }
+  },
+  {
+    "kind": "meeting",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "snapshotPath": "snapshots/신안군의회 회의록20260709_.pdf",
+    "_note": "의회운영위원회 제2호(제335회 폐회중).",
+    "_todo": ["minutes_url→정확 URL", "의사일정 항목 회의록 대조(미확인 → agendas 빈 배열)"],
+    "data": {
+      "id": "2026-steering-002",
+      "clik_docid": null,
+      "date": "2026-07-09",
+      "type": "의회운영위원회",
+      "session": "제335회(폐회중)",
+      "agendas": [],
+      "minutes_html": null,
+      "minutes_url": "https://council.shinan.go.kr"
+    }
+  },
+  {
+    "kind": "meeting",
+    "sourceUrl": "https://council.shinan.go.kr",
+    "snapshotPath": "snapshots/신안군의회 회의록20260714_.pdf",
+    "_note": "제336회 임시회 본회의 제1호. 추경(2026-bill-001)·기금운용계획(2026-bill-002)·군정 주요업무보고(2026-bill-004) 상정.",
+    "_todo": ["minutes_url→정확 URL", "회기결정·예결특위 구성·서명의원 선출 등 절차 안건의 이 회의 귀속 여부 회의록 대조"],
+    "data": {
+      "id": "2026-plenary-002",
+      "clik_docid": null,
+      "date": "2026-07-14",
+      "type": "본회의",
+      "session": "제336회",
+      "agendas": ["2026-bill-001", "2026-bill-002", "2026-bill-004"],
+      "minutes_html": null,
+      "minutes_url": "https://council.shinan.go.kr"
+    }
+  }
+]

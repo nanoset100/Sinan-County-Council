@@ -1,0 +1,42 @@
+{
+  "id": "2026-bill-001",
+  "clik_docid": null,
+  "title": "2026년도 제1회 추가경정예산안",
+  "bill_no": null,
+  "type": "예산",
+  "proposer": {
+    "type": "집행부",
+    "raw": "신안군수"
+  },
+  "outline": "",
+  "timeline": [
+    {
+      "stage": "제안설명",
+      "date": "2026-07-14"
+    },
+    {
+      "stage": "예산결산특별위원회 회부",
+      "date": null
+    }
+  ],
+  "votes": {
+    "recorded": false,
+    "records": []
+  },
+  "related_members": [],
+  "related_dept": null,
+  "related_meetings": [
+    "2026-plenary-002"
+  ],
+  "region_tags": [],
+  "files": [],
+  "_meta": {
+    "source_url": "https://council.shinan.go.kr",
+    "source_system": "MANUAL",
+    "snapshot_path": "snapshots/신안군의회 회의록20260714_.pdf",
+    "source_alive": true,
+    "collected_at": "2026-07-17",
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-17"
+  }
+}
