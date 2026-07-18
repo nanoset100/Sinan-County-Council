@@ -55,5 +55,50 @@
     "collected_at": "2026-07-17",
     "reviewed_by": "장경수",
     "reviewed_at": "2026-07-18"
+  },
+  "ai_content": {
+    "generated_at": "2026-07-17",
+    "model": "claude-sonnet-5",
+    "verifier_passed": true,
+    "reviewed_by": "장경수",
+    "reviewed_at": "2026-07-18",
+    "summary_one_line": "신안군수가 2026년도 제1회 추가경정예산안을 제출했으며, 총규모는 일반회계 9445억 9000만 원과 특별회계 764억 원을 합한 1조 210억 원으로 편성됨.",
+    "what_changes": [
+      {
+        "text": "추가경정예산안의 총규모는 1조 210억 원으로, 일반회계 9445억 9000만 원과 특별회계 764억 원으로 편성됨.",
+        "anchor": {
+          "url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
+          "quote": "총규모는 1조 210억 원으로, 일반회계 9445억 9000만 원과 특별회계 764억 원으로 편성함"
+        }
+      },
+      {
+        "text": "편성 원칙에 따라 공익형 직불제 262억 원, 농어민 공익수당 50억 원, 여객선 운임 지원 39억 원, 노인일자리 30억 원, 전남형 지역성장 전략사업 등 15억 원, 발전소 주변지역 지원사업 12억 원이 각각 편성됨.",
+        "anchor": {
+          "url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
+          "quote": "공익형 직불제 262억 원과 농어민 공익수당 50억 원을 확대함"
+        }
+      },
+      {
+        "text": "일반회계 세입은 지방세 372억 9000만 원, 세외수입 457억 8000만 원, 지방교부세 4026억 1000만 원, 보조금 4019억 8000만 원 등으로 계상됨.",
+        "anchor": {
+          "url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
+          "quote": "일반회계 세입은 지방세 372억 9000만 원, 세외수입 457억 8000만 원, 지방교부세 4026억 1000만 원, 보조금 4019억 8000만 원 등으로 계상함"
+        }
+      },
+      {
+        "text": "특별회계 764억 원은 의료급여기금, 여객운송사업, 발전소주변지역지원사업, 정원관리, 상하수도사업으로 구성됨.",
+        "anchor": {
+          "url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
+          "quote": "특별회계 764억 원은 의료급여기금, 여객운송사업, 발전소주변지역지원사업, 정원관리, 상하수도사업으로 구성함"
+        }
+      }
+    ],
+    "who_affected": {
+      "text": "신안군수가 제출한 2026년도 제1회 추가경정예산안으로, 별도의 적용 대상이나 시행일은 원문에 명시되지 않음.",
+      "anchor": {
+        "url": "https://council.shinan.go.kr/mnts/asvr/cnts/mnt/mntViewer.php?params=QktKaEt3SVROeFc5ck42RTVQZnMrQT09",
+        "quote": "신안군수가 제출한 2026년도 제1회 추가경정예산안"
+      }
+    }
   }
 }
